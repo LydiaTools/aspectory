@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Social Post Image Maker — share card source</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; }
+    body { color: #f5f1e8; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    main { display: grid; grid-template-columns: 485px 715px; width: 100%; height: 100%; }
+    .message { display: flex; flex-direction: column; min-height: 0; background: #173f35; padding: 48px 42px 42px 52px; }
+    .name { display: flex; align-items: center; gap: 13px; font-size: 23px; font-weight: 700; line-height: 1.12; }
+    .mark { display: flex; align-items: flex-end; gap: 4px; width: 29px; height: 26px; flex: none; }
+    .mark i { width: 7px; background: #e8b36f; border-radius: 2px 2px 0 0; }
+    .mark i:nth-child(1) { height: 14px; } .mark i:nth-child(2) { height: 24px; } .mark i:nth-child(3) { height: 19px; }
+    h1 { margin: 82px 0 0; font: 400 65px/.99 Georgia, "Songti SC", serif; letter-spacing: -.04em; }
+    p { margin: 23px 0 0; max-width: 370px; color: #d5e5d9; font-size: 22px; line-height: 1.34; }
+    .foot { margin-top: auto; color: #e8b36f; font-size: 18px; font-weight: 600; }
+    .proof { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); min-height: 0; gap: 13px; background: #e8e6dc; padding: 28px; }
+    figure { position: relative; min-height: 0; overflow: hidden; margin: 0; border: 1px solid #cad1c4; background: #fff; }
+    figure img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    figure:nth-child(1) img { object-position: center 30%; }
+    figure:nth-child(2) img { object-position: center 37%; }
+    figure:nth-child(3) img { object-position: center 25%; }
+    figure:nth-child(4) img { object-position: center 55%; }
+    figcaption { position: absolute; right: 0; bottom: 0; left: 0; padding: 26px 14px 11px; color: white; background: linear-gradient(transparent, rgba(15, 38, 33, .86)); font-size: 17px; font-weight: 700; }
+    html[lang="zh-CN"] .name { font-size: 25px; }
+    html[lang="zh-CN"] h1 { font-size: 59px; letter-spacing: 0; line-height: 1.13; }
+    html[lang="zh-CN"] p { font-size: 22px; }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="message">
+      <div class="name"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span><span id="name">Social Post Image Maker</span></div>
+      <h1 id="headline">One idea.<br>Four native<br>images.</h1>
+      <p id="description">Real exports for Pinterest, Instagram, Lemon8 and Facebook. Each platform gets its own layout.</p>
+      <div class="foot" id="foot">Bilingual · Local-first · MIT</div>
+    </section>
+    <section class="proof" aria-label="Four actual images exported by the tool">
+      <figure><img id="pinterest" src="screenshots/pinterest-field-notes.png" alt="Pinterest output"><figcaption>Pinterest</figcaption></figure>
+      <figure><img id="instagram" src="screenshots/instagram-bright-poster.png" alt="Instagram output"><figcaption>Instagram</figcaption></figure>
+      <figure><img id="lemon8" src="screenshots/lemon8-no-photo.png" alt="Lemon8 output"><figcaption>Lemon8</figcaption></figure>
+      <figure><img id="facebook" src="screenshots/facebook-data-sheet.png" alt="Facebook output"><figcaption>Facebook</figcaption></figure>
+    </section>
+  </main>
+  <script>
+    if (new URLSearchParams(location.search).get('lang') === 'zh') {
+      document.documentElement.lang = 'zh-CN';
+      document.querySelector('#name').textContent = '出海社媒配图助手';
+      document.querySelector('#headline').innerHTML = '一份内容，<br>四个平台的<br>独立配图。';
+      document.querySelector('#description').textContent = '四张本工具实际导出的样图。中文操作，也能制作英文配图。';
+      document.querySelector('#foot').textContent = '四平台 · 本机制作 · 开源';
+      for (const [id, file] of Object.entries({
+        pinterest: 'pinterest-field-notes-zh.png',
+        instagram: 'instagram-bright-poster-zh.png',
+        lemon8: 'lemon8-no-photo-zh.png',
+        facebook: '../../public/social-preview-zh.png'
+      })) document.getElementById(id).src = `screenshots/${file}`;
+    }
+  </script>
+</body>
+</html>
