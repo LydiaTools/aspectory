@@ -6,14 +6,14 @@
 
 **[打开中文版](https://lydiatools.github.io/aspectory/zh.html)** · [English README](README.md)
 
-<img src="docs/screenshots/pinterest-field-notes-zh.png" alt="中文版田野笔记：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/pinterest-bright-poster-zh.png" alt="中文版醒目海报：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="照片叙事风格 Lemon8 成品，使用园艺概念图" width="230"> <img src="public/social-preview-zh.png" alt="本工具实际导出的中文版 Facebook 数据手册风格配图" width="230">
+<img src="docs/screenshots/pinterest-field-notes-zh.png" alt="中文版田野笔记：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/pinterest-bright-poster-zh.png" alt="中文版醒目海报：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/lemon8-no-photo-zh.png" alt="中文版 Lemon8 照片叙事：未上传照片时突出真实输入的关键数字" width="230"> <img src="public/social-preview-zh.png" alt="本工具实际导出的中文版 Facebook 数据手册风格配图" width="230">
 
 ## 功能
 
 - 四种风格：田野笔记、照片叙事、数据手册、醒目海报。
 - 四种画布：Pinterest 1000×1500、Instagram 1080×1350、Lemon8 1080×1440、Facebook 1080×1080。
 - 实时预览，单张下载 PNG/JPEG，或把四个平台分别排版的 PNG 一次打包下载为 ZIP。
-- 可上传自己的照片；不上传到服务器。没有照片时使用明显是图形的背景。
+- 可上传自己的照片；不上传到服务器。没有照片时，用明显是图形的背景突出所填的关键数字。
 - 中英文界面；切换界面语言不会覆盖正在编辑的文案。
 - 中文浏览器首次打开默认中文界面和中文示例；分享 [`zh.html`](https://lydiatools.github.io/aspectory/zh.html) 链接可让接收者直接看到中文标题、操作界面和中文分享卡片。中文界面可直接输入英文，制作面向海外读者的配图；工具不会自动翻译。切换语言只转换未修改的示例，不会翻译或覆盖你自己写的内容。
 - 无需账号、API Key 或后端；草稿只保存在当前浏览器的本地存储。

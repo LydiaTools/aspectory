@@ -8,14 +8,14 @@ The repository keeps its original `aspectory` URL so previously shared studio li
 
 **[Try the live studio](https://lydiatools.github.io/aspectory/)** · **[中文版：出海社媒配图助手](https://lydiatools.github.io/aspectory/zh.html)** · [中文说明](README.zh-CN.md)
 
-<img src="docs/screenshots/pinterest-field-notes.png" alt="Field notes output: a sample mulch calculation in a 1000 by 1500 Pinterest image" width="230"> <img src="docs/screenshots/instagram-bright-poster.png" alt="Bright poster output for Instagram" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="Photo story output for Lemon8 using a CoverCalc Pro concept image" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="Data sheet output for Facebook" width="230">
+<img src="docs/screenshots/pinterest-field-notes.png" alt="Field notes output: a sample mulch calculation in a 1000 by 1500 Pinterest image" width="230"> <img src="docs/screenshots/instagram-bright-poster.png" alt="Bright poster output for Instagram" width="230"> <img src="docs/screenshots/lemon8-no-photo.png" alt="Photo story output for Lemon8: the sample's key figure replaces an optional photo" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="Data sheet output for Facebook" width="230">
 
 ## What it does
 
 - **Four distinct styles:** Field notes, Photo story, Data sheet, and Bright poster. Each is rendered from the same content with its own typography, hierarchy, and color system.
 - **Four export presets:** Pinterest 1000×1500, Instagram 1080×1350, Lemon8 1080×1440, and Facebook 1080×1080. Changing destinations redraws the layout; it does not crop the previous image.
 - **Real image files:** Live Canvas preview, individual PNG/JPEG exports, or one ZIP containing four separately rendered platform PNGs in the chosen style.
-- **Your own photo, if you want one:** Photo story can use a local PNG, JPEG, or WebP. Without a photo it uses a clearly graphic background.
+- **Your own photo, if you want one:** Photo story can use a local PNG, JPEG, or WebP. Without a photo, the key figure becomes the lead visual on a clearly graphic background.
 - **English and Chinese interface:** Switch languages without deleting the copy you are writing. The canvas accepts English or Chinese text.
 - **A Chinese starting point:** Chinese browsers open with a Chinese interface and sample; the shareable [`zh.html` page](https://lydiatools.github.io/aspectory/zh.html) has a Chinese title and preview for Chinese-language posts. Language switching changes only the untouched sample and preserves your own draft.
 - **Chinese controls for overseas posts:** Write English copy in the Chinese interface when that is the language your audience reads. The tool lays out the text you enter; it does not translate it.

@@ -18,8 +18,8 @@ export function normalizeContent(raw) {
 
 function font(size, family = 'sans', weight = 400) {
   const face = family === 'serif' ? '"DM Serif Display", Georgia, "Noto Serif CJK SC", serif' :
-    family === 'display' ? '"Space Grotesk", "Noto Sans CJK SC", Arial, sans-serif' :
-    '"DM Sans", "Noto Sans CJK SC", Arial, sans-serif';
+    family === 'display' ? '"Space Grotesk", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif' :
+    '"DM Sans", "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Arial, sans-serif';
   return `${weight} ${size}px ${face}`;
 }
 
@@ -129,18 +129,32 @@ function field(ctx, c, H, warnings) {
 }
 
 function photo(ctx, c, H, image, warnings) {
-  const compact = H < 1200, photoH = compact ? H * .49 : H * .55;
+  const compact = H < 1200, photoH = image ? (compact ? H * .49 : H * .55) : (compact ? H * .42 : H * .46);
   ctx.fillStyle = '#f4f0e6'; ctx.fillRect(0, 0, 1000, H);
   drawPhoto(ctx, image, 0, 0, 1000, photoH);
   ctx.fillStyle = 'rgba(13, 51, 41, .75)'; ctx.fillRect(0, 0, 1000, 114);
   textBlock(ctx, c.brand, { x: 64, y: 39, width: 860, size: 29, maxLines: 1, weight: 700, color: '#fff' }, warnings);
+  if (!image && c.figure) {
+    const metricY = compact ? 154 : photoH * .32, metricSize = compact ? 108 : 148;
+    const parts = c.figure.match(/^([0-9][0-9.,%]*)\s+(.+)$/u);
+    ctx.font = font(metricSize, 'display', 600);
+    const metricWidth = parts ? ctx.measureText(parts[1]).width : 0;
+    let figureBottom;
+    if (parts && metricWidth < 600) {
+      figureBottom = textBlock(ctx, parts[1], { x: 64, y: metricY, width: metricWidth + 8, size: metricSize, minSize: metricSize, maxLines: 1, leading: 1, family: 'display', weight: 600, color: '#f5f0e6' }, warnings);
+      textBlock(ctx, parts[2], { x: 84 + metricWidth, y: metricY + (compact ? 44 : 62), width: 852 - metricWidth, size: compact ? 57 : 75, minSize: 34, maxLines: 1, family: 'display', weight: 600, color: '#f5f0e6' }, warnings);
+    } else {
+      figureBottom = textBlock(ctx, c.figure, { x: 64, y: metricY, width: 872, size: metricSize, minSize: compact ? 62 : 84, maxLines: 1, leading: 1, family: 'display', weight: 600, color: '#f5f0e6' }, warnings);
+    }
+    textBlock(ctx, c.figureLabel, { x: 68, y: figureBottom + 10, width: 840, size: compact ? 25 : 32, minSize: 20, maxLines: 1, weight: 600, color: '#f5f0e6' }, warnings);
+  }
   pill(ctx, c.eyebrow || 'Story', 64, photoH - 82, { bg: '#f5f0e6', fg: '#294b3d', size: 21 });
   const titleY = photoH + 40;
   const titleBottom = textBlock(ctx, c.title, { x: 64, y: titleY, width: 872, size: compact ? 68 : 74, minSize: 48, maxLines: compact ? 2 : 3, leading: 1.02, family: 'serif', color: '#223f37' }, warnings);
   const bodyY = titleBottom + 25;
   textBlock(ctx, c.body, { x: 64, y: bodyY, width: 872, size: 25, minSize: 21, maxLines: compact ? 2 : 3, leading: 1.26, color: '#43574b' }, warnings);
   rule(ctx, 64, H - 138, 936, '#b5bea9', 2);
-  textBlock(ctx, c.figure, { x: 64, y: H - 118, width: 560, size: 52, minSize: 36, maxLines: 1, family: 'serif', color: '#b0693e' }, warnings);
+  textBlock(ctx, image ? c.figure : c.figureLabel, { x: 64, y: H - 118, width: 560, size: image ? 52 : 29, minSize: 21, maxLines: 1, family: image ? 'serif' : 'sans', color: '#b0693e' }, warnings);
   textBlock(ctx, c.cta, { x: 936, y: H - 116, width: 410, size: 20, minSize: 17, maxLines: 1, align: 'right', weight: 600, color: '#43574b' }, warnings);
   textBlock(ctx, c.url || c.cta, { x: 936, y: H - 68, width: 460, size: 21, maxLines: 1, align: 'right', color: '#43574b' }, warnings);
 }
