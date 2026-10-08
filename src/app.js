@@ -68,6 +68,7 @@ const fields = ['brand', 'eyebrow', 'title', 'body', 'figure', 'figureLabel', 'c
 const canvas = document.querySelector('#preview');
 const status = document.querySelector('#status');
 const exportFollowup = document.querySelector('#export-followup');
+let exportCompleted = false;
 const state = { platform: 'pinterest', style: 'field', image: null, lang: 'en' };
 const saved = (() => { try { return JSON.parse(localStorage.getItem('aspectory-draft') || '{}'); } catch { return {}; } })();
 for (const id of fields) if (typeof saved[id] === 'string') document.getElementById(id).value = saved[id];
@@ -89,6 +90,7 @@ function save() {
 function setStatus(message = '', isError = false) {
   status.textContent = message;
   status.style.color = isError ? '#a4472b' : '#2a6550';
+  exportCompleted = false;
   exportFollowup.hidden = true;
 }
 function translate() {
@@ -121,11 +123,10 @@ function select(kind, value) {
     button.classList.toggle('is-selected', selected);
     button.setAttribute(kind === 'platform' ? 'aria-pressed' : 'aria-checked', String(selected));
   }
-  paint(); save();
+  setStatus(); paint(); save();
 }
 let frame = 0;
 function paint() {
-  exportFollowup.hidden = true;
   cancelAnimationFrame(frame);
   frame = requestAnimationFrame(() => {
     const spec = PLATFORMS[state.platform];
@@ -133,7 +134,9 @@ function paint() {
     document.querySelector('#size').textContent = `${result.width} × ${result.height} px`;
     const styleLabel = state.lang === 'en' ? STYLE_NAMES[state.style] : STRINGS.zh[state.style];
     document.querySelector('#preview-name').textContent = `${spec.label} · ${styleLabel}`;
-    setStatus(result.warnings.length ? STRINGS[state.lang][result.warnings[0].startsWith('Add') ? 'addTitle' : 'shortened'] : '', result.warnings.length > 0);
+    if (result.warnings.length || !exportCompleted) {
+      setStatus(result.warnings.length ? STRINGS[state.lang][result.warnings[0].startsWith('Add') ? 'addTitle' : 'shortened'] : '', result.warnings.length > 0);
+    }
   });
 }
 async function download(mime) {
@@ -150,6 +153,7 @@ async function download(mime) {
     setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
     if (!result.warnings.length) {
       setStatus(STRINGS[state.lang].saved);
+      exportCompleted = true;
       exportFollowup.hidden = false;
     }
   } catch { setStatus(STRINGS[state.lang].failed, true); }
@@ -178,15 +182,19 @@ async function downloadAll() {
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
     setStatus(STRINGS[state.lang][shortened ? 'shortened' : 'packageSaved'], shortened);
-    if (!shortened) exportFollowup.hidden = false;
+    if (!shortened) {
+      exportCompleted = true;
+      exportFollowup.hidden = false;
+    }
   } catch { setStatus(STRINGS[state.lang].failed, true); }
   finally { button.disabled = false; }
 }
 
-for (const id of fields) document.getElementById(id).addEventListener('input', () => { paint(); save(); });
+for (const id of fields) document.getElementById(id).addEventListener('input', () => { setStatus(); paint(); save(); });
 for (const button of document.querySelectorAll('.platform')) button.addEventListener('click', () => select('platform', button.dataset.platform));
 for (const button of document.querySelectorAll('.style-option')) button.addEventListener('click', () => select('style', button.dataset.style));
 document.querySelector('#language').addEventListener('click', () => {
+  setStatus();
   const previous = state.lang;
   state.lang = previous === 'en' ? 'zh' : 'en';
   const example = translatedExample(content(), previous, state.lang);
