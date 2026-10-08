@@ -11,7 +11,7 @@ import '@fontsource/space-grotesk/latin-700.css';
 import './styles.css';
 import { PLATFORMS, STYLE_NAMES, renderPost } from './render.js';
 import { buildPngPackage } from './export-package.js';
-import { EXAMPLES, initialLanguage, translatedExample } from './i18n.js';
+import { EXAMPLES, initialLanguage, languageFromPath, translatedExample } from './i18n.js';
 
 const STRINGS = {
   en: {
@@ -38,11 +38,11 @@ const STRINGS = {
     failed: 'Export failed. Try another browser.', shortened: 'Some text was shortened in the image. Edit the copy or choose a taller canvas.'
   },
   zh: {
-    productName: '海外社媒配图工坊', pageTitle: '海外社媒配图工坊｜Pinterest、Instagram、Lemon8、Facebook',
-    homeLabel: '海外社媒配图工坊首页', styleGroup: '视觉风格', targetGroup: '导出平台', previewRegion: '实时预览', canvasLabel: '生成的帖子图片预览',
+    productName: '出海社媒配图助手', pageTitle: '出海社媒配图助手｜Pinterest、Instagram、Lemon8、Facebook',
+    homeLabel: '出海社媒配图助手首页', styleGroup: '视觉风格', targetGroup: '导出平台', previewRegion: '实时预览', canvasLabel: '生成的帖子图片预览',
     local: '本机制作，无需账号', overline: 'Pinterest · Instagram · Lemon8 · Facebook',
-    heading: '一份内容，<br><em>四套社媒配图。</em>',
-    intro: '为 Pinterest、Instagram、Lemon8、Facebook 分别排版。中文界面也能做英文配图：请用目标读者的语言填写内容，逐平台预览后下载；工具不会自动翻译。',
+    heading: '给海外平台发图，<br><em>一次做好四种尺寸。</em>',
+    intro: '输入自己的内容，选择风格，分别导出 Pinterest、Instagram、Lemon8、Facebook 配图。中文操作，英文文案可直接排版；发布前逐平台预览。',
     profileLink: '到 LydiaTools GitHub 看更多开源工具 ↗',
     contentHeading: '内容', brand: '品牌／署名', eyebrow: '栏目分类', title: '标题',
     body: '补充说明', figure: '核心数字', figureLabel: '数字说明', cta: '底部引导语',
@@ -70,7 +70,8 @@ const saved = (() => { try { return JSON.parse(localStorage.getItem('aspectory-d
 for (const id of fields) if (typeof saved[id] === 'string') document.getElementById(id).value = saved[id];
 if (saved.platform && PLATFORMS[saved.platform]) state.platform = saved.platform;
 if (saved.style && STYLE_NAMES[saved.style]) state.style = saved.style;
-state.lang = initialLanguage(new URLSearchParams(location.search).get('lang'), saved.lang, navigator.language);
+const pathLang = languageFromPath(location.pathname);
+state.lang = initialLanguage(new URLSearchParams(location.search).get('lang') || pathLang, saved.lang, navigator.language);
 for (const from of ['en', 'zh']) {
   const current = Object.fromEntries(fields.map(id => [id, document.getElementById(id).value]));
   const example = translatedExample(current, from, state.lang);
@@ -176,8 +177,10 @@ document.querySelector('#language').addEventListener('click', () => {
   state.lang = previous === 'en' ? 'zh' : 'en';
   const example = translatedExample(content(), previous, state.lang);
   if (example) for (const id of fields) document.getElementById(id).value = example[id];
-  const url = new URL(location.href);
-  url.searchParams.set('lang', state.lang);
+  const url = new URL(state.lang === 'zh' ? 'zh.html' : './', location.href);
+  for (const [key, value] of new URLSearchParams(location.search)) {
+    if (key !== 'lang') url.searchParams.append(key, value);
+  }
   history.replaceState(null, '', url);
   translate(); save();
 });

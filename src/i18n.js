@@ -21,6 +21,10 @@ export function initialLanguage(urlLang, savedLang, browserLang) {
   return /^zh(?:-|$)/i.test(browserLang || '') ? 'zh' : 'en';
 }
 
+export function languageFromPath(pathname) {
+  return /\/zh\.html$/.test(pathname || '') ? 'zh' : null;
+}
+
 export function translatedExample(current, from, to) {
   if (!EXAMPLES[from] || !EXAMPLES[to]) return null;
   return Object.keys(EXAMPLES[from]).every(key => current[key] === EXAMPLES[from][key]) ? EXAMPLES[to] : null;

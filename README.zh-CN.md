@@ -1,12 +1,12 @@
-# 海外社媒配图工坊
+# 出海社媒配图助手
 
 **一份内容，分别做好 Pinterest、Instagram、Lemon8、Facebook 的配图。**
 
-海外社媒配图工坊（英文名 Social Post Image Maker）是本机运行的社媒图片制作工具。输入标题、事实说明、关键数字和来源，选择版式，然后分别导出 Pinterest、Instagram、Lemon8、Facebook 的图片。它会重新排版，不是把同一张图粗暴裁切。仓库地址沿用早期代号 `aspectory`，避免已分享的体验链接失效。
+出海社媒配图助手（英文名 Social Post Image Maker）面向想在海外平台发图的中文创作者。输入标题、事实说明、关键数字和来源，选择版式，然后分别导出 Pinterest、Instagram、Lemon8、Facebook 的图片。它会重新排版，不是把同一张图粗暴裁切。仓库地址沿用早期代号 `aspectory`，避免已分享的体验链接失效。
 
-**[打开中文版](https://lydiatools.github.io/aspectory/?lang=zh)** · [English README](README.md)
+**[打开中文版](https://lydiatools.github.io/aspectory/zh.html)** · [English README](README.md)
 
-<img src="docs/screenshots/pinterest-field-notes-zh.png" alt="中文版田野笔记：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/pinterest-bright-poster-zh.png" alt="中文版醒目海报：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="照片叙事风格 Lemon8 成品，使用园艺概念图" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="数据手册风格 Facebook 成品" width="230">
+<img src="docs/screenshots/pinterest-field-notes-zh.png" alt="中文版田野笔记：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/pinterest-bright-poster-zh.png" alt="中文版醒目海报：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="照片叙事风格 Lemon8 成品，使用园艺概念图" width="230"> <img src="public/social-preview-zh.png" alt="本工具实际导出的中文版 Facebook 数据手册风格配图" width="230">
 
 ## 功能
 
@@ -15,12 +15,12 @@
 - 实时预览，单张下载 PNG/JPEG，或把四个平台分别排版的 PNG 一次打包下载为 ZIP。
 - 可上传自己的照片；不上传到服务器。没有照片时使用明显是图形的背景。
 - 中英文界面；切换界面语言不会覆盖正在编辑的文案。
-- 中文浏览器首次打开默认中文界面和中文示例；分享 `?lang=zh` 链接可直接打开中文版。中文界面可直接输入英文，制作面向海外读者的配图；工具不会自动翻译。切换语言只转换未修改的示例，不会翻译或覆盖你自己写的内容。
+- 中文浏览器首次打开默认中文界面和中文示例；分享 [`zh.html`](https://lydiatools.github.io/aspectory/zh.html) 链接可让接收者直接看到中文标题、操作界面和中文分享卡片。中文界面可直接输入英文，制作面向海外读者的配图；工具不会自动翻译。切换语言只转换未修改的示例，不会翻译或覆盖你自己写的内容。
 - 无需账号、API Key 或后端；草稿只保存在当前浏览器的本地存储。
 
 ## 上手
 
-在线打开 [海外社媒配图工坊中文版](https://lydiatools.github.io/aspectory/?lang=zh)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。如果面向英语读者，就在中文界面里填写英文内容。发布前请在目标平台再次查看实际裁切效果。
+在线打开 [出海社媒配图助手中文版](https://lydiatools.github.io/aspectory/zh.html)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。如果面向英语读者，就在中文界面里填写英文内容。发布前请在目标平台再次查看实际裁切效果。
 
 用过之后，欢迎通过[中英文反馈表](https://github.com/LydiaTools/aspectory/issues/new?template=use-feedback.yml)说说你做的是哪个平台、用了什么版式，以及哪里不好用。提交需要登录 GitHub；无需公开自己的私有文案。
 
