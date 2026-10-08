@@ -1,12 +1,12 @@
 # Social Post Image Maker
 
-**Aspectory · One useful idea. Four platform-ready image layouts.**
+**One useful idea. Four platform-ready image layouts.**
 
-Social Post Image Maker (Aspectory) is a free, local-first tool for turning a *real fact, lesson, comparison, or product insight* into an image worth saving. Write once, choose a visual direction, and export a newly composed image for Pinterest, Instagram, Lemon8, or Facebook. It is an image composer, not an auto-posting bot or a promise of reach.
+Social Post Image Maker is a free, local-first tool for turning a *real fact, lesson, comparison, or product insight* into an image worth saving. Write once, choose a visual direction, and export a newly composed image for Pinterest, Instagram, Lemon8, or Facebook. It is an image composer, not an auto-posting bot or a promise of reach.
 
 **[Try the live studio](https://lydiatools.github.io/aspectory/?lang=en)** · **[中文体验](https://lydiatools.github.io/aspectory/?lang=zh)** · [中文说明](README.zh-CN.md)
 
-<img src="docs/screenshots/pinterest-field-notes.png" alt="Aspectory Field notes output: a sample mulch calculation in a 1000 by 1500 Pinterest image" width="230"> <img src="docs/screenshots/instagram-bright-poster.png" alt="Aspectory Bright poster output for Instagram" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="Aspectory Photo story output for Lemon8 using a CoverCalc Pro concept image" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="Aspectory Data sheet output for Facebook" width="230">
+<img src="docs/screenshots/pinterest-field-notes.png" alt="Field notes output: a sample mulch calculation in a 1000 by 1500 Pinterest image" width="230"> <img src="docs/screenshots/instagram-bright-poster.png" alt="Bright poster output for Instagram" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="Photo story output for Lemon8 using a CoverCalc Pro concept image" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="Data sheet output for Facebook" width="230">
 
 ## What it does
 
@@ -16,6 +16,7 @@ Social Post Image Maker (Aspectory) is a free, local-first tool for turning a *r
 - **Your own photo, if you want one:** Photo story can use a local PNG, JPEG, or WebP. Without a photo it uses a clearly graphic background.
 - **English and Chinese interface:** Switch languages without deleting the copy you are writing. The canvas accepts English or Chinese text.
 - **A Chinese starting point:** Chinese browsers open with a Chinese interface and sample; a shareable `?lang=zh` link opens the Chinese version. Language switching changes only the untouched sample and preserves your own draft.
+- **Chinese controls for overseas posts:** Write English copy in the Chinese interface when that is the language your audience reads. The tool lays out the text you enter; it does not translate it.
 - **Local-first by design:** No account, backend, API key, upload, analytics script, or automatic publishing. Your draft is saved in this browser's local storage; the optional photo remains in memory for the current session. The Latin font files are bundled with the site.
 
 ## Try it
@@ -36,7 +37,7 @@ npm run dev
 
 Build and test with `npm run build` and `npm test`. The production bundle uses relative paths so it also works below a GitHub Pages repository path.
 
-| Destination | Aspectory export | Why this preset |
+| Destination | Image export | Why this preset |
 | --- | ---: | --- |
 | Pinterest | 1000 × 1500 · 2:3 | Pinterest [recommends 2:3](https://help.pinterest.com/en/business/article/pin-performance-and-distribution) for quality Pins. |
 | Instagram feed | 1080 × 1350 · 4:5 | A vertical feed composition preset. Check the app's current crop before publishing. |
@@ -47,9 +48,9 @@ These are export choices, not universal platform requirements. They do not predi
 
 ## Where the visual idea came from
 
-The owner liked a Muse-made CoverCalc Pro daily brief and a related Pinterest infographic. That led to the **Field notes** direction: restrained color, editorial type, a verifiable number, and a visible source. Aspectory's rendering code and layouts were built independently for this project. The original Muse-produced Pin is included below as a visual reference, **not** as an Aspectory output, software screenshot, published Pin, or engagement claim.
+The owner liked a Muse-made CoverCalc Pro daily brief and a related Pinterest infographic. That led to the **Field notes** direction: restrained color, editorial type, a verifiable number, and a visible source. The rendering code and layouts were built independently for this project. The original Muse-produced Pin is included below as a visual reference, **not** as an output of this tool, software screenshot, published Pin, or engagement claim.
 
-<img src="docs/examples/muse-covercalc-pin.jpg" alt="Muse-produced CoverCalc Pro infographic supplied by the project owner as a visual reference; not an Aspectory output" width="320">
+<img src="docs/examples/muse-covercalc-pin.jpg" alt="Muse-produced CoverCalc Pro infographic supplied by the project owner as a visual reference; not an output of this tool" width="320">
 
 The sample is a 1000×1500 image delivered in the owner's Muse workspace on 2026-10-07. Its SHA-256 is `f4f4a25909f838554c5b801ae8e6a60a29008133b01efeb2d02d4b03809c7bc1`. See [example provenance](docs/examples/PROVENANCE.md). The demonstration's 13-bag calculation has stated inputs: 10×10 ft, 3 in depth, 2 ft³ per bag; 25 ft³ ÷ 2 = 12.5, rounded up to 13 whole bags. This is sample content for layout testing, not evidence of a live campaign.
 
@@ -57,7 +58,7 @@ The Lemon8 Photo story screenshot uses a CoverCalc Pro garden refresh **concept 
 
 ## Boundaries
 
-Aspectory composes graphics from your copy and optional photo. It **does not** synthesize photorealistic images from a prompt, fact-check your claims, schedule or publish posts, or guarantee that an image will perform well. Text that exceeds a layout may be shortened in the export; the editor warns you so you can trim it. When a caption, metric, or image needs a source, check it before posting. Photos you add should be yours or licensed for the use you intend.
+Social Post Image Maker composes graphics from your copy and optional photo. It **does not** synthesize photorealistic images from a prompt, fact-check your claims, schedule or publish posts, or guarantee that an image will perform well. Text that exceeds a layout may be shortened in the export; the editor warns you so you can trim it. When a caption, metric, or image needs a source, check it before posting. Photos you add should be yours or licensed for the use you intend.
 
 ## Development
 

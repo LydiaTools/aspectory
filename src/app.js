@@ -15,7 +15,7 @@ import { EXAMPLES, initialLanguage, translatedExample } from './i18n.js';
 
 const STRINGS = {
   en: {
-    productName: 'Social Post Image Maker', pageTitle: 'Social Post Image Maker — Aspectory',
+    productName: 'Social Post Image Maker', pageTitle: 'Social Post Image Maker | Pinterest, Instagram, Lemon8 & Facebook',
     homeLabel: 'Social Post Image Maker home', styleGroup: 'Visual style', targetGroup: 'Export target', previewRegion: 'Live preview', canvasLabel: 'Generated post preview',
     local: 'Made on your device. No account.', overline: 'Images for the feeds where you post',
     heading: 'One useful idea.<br><em>Four social-ready images.</em>',
@@ -37,11 +37,11 @@ const STRINGS = {
     failed: 'Export failed. Try another browser.', shortened: 'Some text was shortened in the image. Edit the copy or choose a taller canvas.'
   },
   zh: {
-    productName: '出海配图工坊', pageTitle: '出海配图工坊 — Aspectory',
-    homeLabel: '出海配图工坊首页', styleGroup: '视觉风格', targetGroup: '导出平台', previewRegion: '实时预览', canvasLabel: '生成的帖子图片预览',
+    productName: '海外社媒配图工坊', pageTitle: '海外社媒配图工坊｜Pinterest、Instagram、Lemon8、Facebook',
+    homeLabel: '海外社媒配图工坊首页', styleGroup: '视觉风格', targetGroup: '导出平台', previewRegion: '实时预览', canvasLabel: '生成的帖子图片预览',
     local: '本机制作，无需账号', overline: 'Pinterest · Instagram · Lemon8 · Facebook',
-    heading: '一份内容，<br><em>四个平台都有好图。</em>',
-    intro: '把真实观点、经验或产品信息做成海外社媒图片。选择风格，逐平台检查，一次打包下载。',
+    heading: '一份内容，<br><em>四套社媒配图。</em>',
+    intro: '为 Pinterest、Instagram、Lemon8、Facebook 分别排版。中文界面也能做英文配图：请用目标读者的语言填写内容，逐平台预览后下载；工具不会自动翻译。',
     contentHeading: '内容', brand: '品牌／署名', eyebrow: '栏目分类', title: '标题',
     body: '补充说明', figure: '核心数字', figureLabel: '数字说明', cta: '底部引导语',
     url: '来源／网站', artHeading: '视觉风格', field: '田野笔记',
@@ -132,7 +132,7 @@ async function download(mime) {
     const objectUrl = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
     anchor.href = objectUrl;
-    anchor.download = `aspectory-${state.platform}-${state.style}.${mime === 'image/png' ? 'png' : 'jpg'}`;
+    anchor.download = `social-post-image-maker-${state.platform}-${state.style}.${mime === 'image/png' ? 'png' : 'jpg'}`;
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
     if (!result.warnings.length) setStatus(STRINGS[state.lang].saved);
@@ -158,7 +158,7 @@ async function downloadAll() {
     const objectUrl = URL.createObjectURL(archive);
     const anchor = document.createElement('a');
     anchor.href = objectUrl;
-    anchor.download = `aspectory-${state.style}-four-platforms.zip`;
+    anchor.download = `social-post-image-maker-${state.style}-four-platforms.zip`;
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
     setStatus(STRINGS[state.lang][shortened ? 'shortened' : 'packageSaved'], shortened);

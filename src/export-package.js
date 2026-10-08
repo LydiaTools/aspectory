@@ -7,7 +7,7 @@ export function buildPngPackage(style, outputs) {
   const files = {};
   for (const { platform, bytes } of outputs) {
     if (!PLATFORMS[platform] || !(bytes instanceof Uint8Array)) throw new Error('Invalid package image.');
-    const name = `aspectory-${platform}-${style}.png`;
+    const name = `social-post-image-maker-${platform}-${style}.png`;
     if (files[name]) throw new Error(`Duplicate platform: ${platform}`);
     files[name] = bytes;
   }

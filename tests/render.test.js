@@ -34,7 +34,7 @@ test('content normalization caps input and preserves factual characters', () => 
 test('four-platform package contains one independently named image per destination', () => {
   const outputs = Object.keys(PLATFORMS).map((platform, index) => ({ platform, bytes: new Uint8Array([137, 80, 78, 71, index]) }));
   const archive = unzipSync(buildPngPackage('field', outputs));
-  assert.deepEqual(Object.keys(archive).sort(), Object.keys(PLATFORMS).map(platform => `aspectory-${platform}-field.png`).sort());
-  outputs.forEach(({ platform, bytes }) => assert.deepEqual(archive[`aspectory-${platform}-field.png`], bytes));
+  assert.deepEqual(Object.keys(archive).sort(), Object.keys(PLATFORMS).map(platform => `social-post-image-maker-${platform}-field.png`).sort());
+  outputs.forEach(({ platform, bytes }) => assert.deepEqual(archive[`social-post-image-maker-${platform}-field.png`], bytes));
   assert.throws(() => buildPngPackage('field', outputs.slice(0, 3)), /four platforms/);
 });
