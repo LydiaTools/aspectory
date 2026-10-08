@@ -12,14 +12,14 @@ Aspectory 是本机运行的社媒图片制作工具。输入标题、事实说�
 
 - 四种风格：田野笔记、照片叙事、数据手册、醒目海报。
 - 四种画布：Pinterest 1000×1500、Instagram 1080×1350、Lemon8 1080×1440、Facebook 1080×1080。
-- 实时预览，下载真实 PNG/JPEG 图片。
+- 实时预览，单张下载 PNG/JPEG，或把四个平台分别排版的 PNG 一次打包下载为 ZIP。
 - 可上传自己的照片；不上传到服务器。没有照片时使用明显是图形的背景。
 - 中英文界面；切换界面语言不会覆盖正在编辑的文案。
 - 无需账号、API Key 或后端；草稿只保存在当前浏览器的本地存储。
 
 ## 上手
 
-在线打开 [Aspectory](https://lydiatools.github.io/aspectory/)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载。发布前请在目标平台再次查看实际裁切效果。
+在线打开 [Aspectory](https://lydiatools.github.io/aspectory/)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。发布前请在目标平台再次查看实际裁切效果。
 
 ```bash
 git clone https://github.com/LydiaTools/aspectory.git

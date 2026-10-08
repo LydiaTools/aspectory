@@ -12,7 +12,7 @@ Aspectory is a free, local-first visual post maker for people who want to turn a
 
 - **Four distinct styles:** Field notes, Photo story, Data sheet, and Bright poster. Each is rendered from the same content with its own typography, hierarchy, and color system.
 - **Four export presets:** Pinterest 1000×1500, Instagram 1080×1350, Lemon8 1080×1440, and Facebook 1080×1080. Changing destinations redraws the layout; it does not crop the previous image.
-- **Real image files:** Live Canvas preview and one-click PNG or JPEG download at the displayed dimensions.
+- **Real image files:** Live Canvas preview, individual PNG/JPEG exports, or one ZIP containing four separately rendered platform PNGs in the chosen style.
 - **Your own photo, if you want one:** Photo story can use a local PNG, JPEG, or WebP. Without a photo it uses a clearly graphic background.
 - **English and Chinese interface:** Switch languages without deleting the copy you are writing. The canvas accepts English or Chinese text.
 - **Local-first by design:** No account, backend, API key, upload, analytics script, or automatic publishing. Your draft is saved in this browser's local storage; the optional photo remains in memory for the current session. The Latin font files are bundled with the site.
@@ -22,7 +22,7 @@ Aspectory is a free, local-first visual post maker for people who want to turn a
 1. Open the [live studio](https://lydiatools.github.io/aspectory/) or run it locally.
 2. Replace the CoverCalc Pro example with your own **verified** headline, context, key figure, and source.
 3. Choose a visual style and a destination. Add your own photo if you choose Photo story.
-4. Check the preview and download PNG or JPEG. Preview the result on the destination platform before publishing.
+4. Check the preview. Download one PNG/JPEG, or use **All 4 PNGs · ZIP** for every destination. Preview the result on each platform before publishing.
 
 ```bash
 git clone https://github.com/LydiaTools/aspectory.git
@@ -58,6 +58,6 @@ Aspectory composes graphics from your copy and optional photo. It **does not** s
 
 ## Development
 
-The app is a small Vite site with a Canvas 2D renderer in [`src/render.js`](src/render.js), UI wiring and bilingual copy in [`src/app.js`](src/app.js), and an intentionally dependency-light interface. There is no server component. Platform dimensions and composition styles are independent, so more destinations or styles can be added without copying an entire page. The code is MIT licensed; the Muse example image and brand assets are provided as references and are not automatically covered by the code license. Bundled fonts retain their SIL Open Font License terms.
+The app is a small Vite site with a Canvas 2D renderer in [`src/render.js`](src/render.js), UI wiring and bilingual copy in [`src/app.js`](src/app.js), and a local ZIP builder for batch exports. There is no server component. Platform dimensions and composition styles are independent, so more destinations or styles can be added without copying an entire page. The code is MIT licensed; the Muse example image and brand assets are provided as references and are not automatically covered by the code license. Bundled fonts retain their SIL Open Font License terms.
 
 Ideas and focused pull requests are welcome—especially typography testing on different devices, accessibility improvements, and new layouts grounded in real user content.

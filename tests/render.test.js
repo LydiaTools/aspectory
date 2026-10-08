@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { PLATFORMS, STYLE_NAMES, normalizeContent, wrapLines } from '../src/render.js';
+import { unzipSync } from 'fflate';
+import { buildPngPackage } from '../src/export-package.js';
 
 test('platform presets use distinct, exact pixel sizes', () => {
   assert.deepEqual(Object.fromEntries(Object.entries(PLATFORMS).map(([key, value]) => [key, [value.width, value.height]])), {
@@ -26,4 +28,12 @@ test('content normalization caps input and preserves factual characters', () => 
   assert.equal(result.title.length, 110);
   assert.equal(result.body, '25 ft³ ÷ 2 ft³ = 12.5');
   assert.equal(result.figure, '13 bags');
+});
+
+test('four-platform package contains one independently named image per destination', () => {
+  const outputs = Object.keys(PLATFORMS).map((platform, index) => ({ platform, bytes: new Uint8Array([137, 80, 78, 71, index]) }));
+  const archive = unzipSync(buildPngPackage('field', outputs));
+  assert.deepEqual(Object.keys(archive).sort(), Object.keys(PLATFORMS).map(platform => `aspectory-${platform}-field.png`).sort());
+  outputs.forEach(({ platform, bytes }) => assert.deepEqual(archive[`aspectory-${platform}-field.png`], bytes));
+  assert.throws(() => buildPngPackage('field', outputs.slice(0, 3)), /four platforms/);
 });

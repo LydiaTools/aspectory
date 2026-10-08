@@ -10,6 +10,7 @@ import '@fontsource/space-grotesk/latin-600.css';
 import '@fontsource/space-grotesk/latin-700.css';
 import './styles.css';
 import { PLATFORMS, STYLE_NAMES, renderPost } from './render.js';
+import { buildPngPackage } from './export-package.js';
 
 const STRINGS = {
   en: {
@@ -24,10 +25,11 @@ const STRINGS = {
     posterDesc: 'big type, strong contrast', upload: 'Add your own photo',
     uploadHelp: 'Optional. Used by Photo story; stays in this browser.', destination: 'Destination',
     formatNote: "Canvas sizes are export presets, not promises of reach. Check each platform's preview before posting.",
-    live: 'Live canvas', downloadPng: 'Download PNG', downloadJpeg: 'JPEG',
+    live: 'Live canvas', downloadPng: 'Download PNG', downloadJpeg: 'JPEG', downloadAll: 'All 4 PNGs · ZIP',
     privacy: 'No uploads, no tracking, no automatic posting. Your image and text remain in the browser.',
     addTitle: 'Add a headline before exporting.', uploaded: 'Photo ready', tooLarge: 'Choose an image under 10 MB.',
     badImage: 'Could not read this image. Try PNG, JPEG or WebP.', saved: 'Image downloaded.',
+    packaging: 'Building four images on your device…', packageSaved: 'Four platform images downloaded as a ZIP.',
     failed: 'Export failed. Try another browser.', shortened: 'Some text was shortened in the image. Edit the copy or choose a taller canvas.'
   },
   zh: {
@@ -42,10 +44,11 @@ const STRINGS = {
     posterDesc: '大字与鲜明对比', upload: '添加自己的照片',
     uploadHelp: '可选，仅照片叙事使用；图片留在浏览器里。', destination: '发布平台',
     formatNote: '这些是导出尺寸预设，不保证流量。发布前请在平台预览。',
-    live: '实时画布', downloadPng: '下载 PNG', downloadJpeg: 'JPEG',
+    live: '实时画布', downloadPng: '下载 PNG', downloadJpeg: 'JPEG', downloadAll: '四平台 PNG 打包下载',
     privacy: '不上传、不跟踪、不自动发布。文字与照片保留在本机浏览器中。',
     addTitle: '请先填写标题，再导出。', uploaded: '照片已载入', tooLarge: '请选择小于 10 MB 的图片。',
     badImage: '无法读取图片，请换用 PNG、JPEG 或 WebP。', saved: '图片已下载。',
+    packaging: '正在本机生成四张图片…', packageSaved: '四个平台的图片已打包下载。',
     failed: '导出失败，请更换浏览器重试。', shortened: '图片中有文字被缩短，请精简文案或选择更高的画布。'
   }
 };
@@ -118,12 +121,40 @@ async function download(mime) {
   } catch { setStatus(STRINGS[state.lang].failed, true); }
 }
 
+async function downloadAll() {
+  if (!document.querySelector('#title').value.trim()) return setStatus(STRINGS[state.lang].addTitle, true);
+  const button = document.querySelector('#all');
+  button.disabled = true;
+  setStatus(STRINGS[state.lang].packaging);
+  try {
+    const outputs = [];
+    let shortened = false;
+    for (const platform of Object.keys(PLATFORMS)) {
+      const exportCanvas = document.createElement('canvas');
+      const result = renderPost(exportCanvas, { content: content(), platform, style: state.style, image: state.image });
+      shortened ||= result.warnings.length > 0;
+      const blob = await new Promise((resolve, reject) => exportCanvas.toBlob(value => value ? resolve(value) : reject(new Error('Canvas export failed')), 'image/png'));
+      outputs.push({ platform, bytes: new Uint8Array(await blob.arrayBuffer()) });
+    }
+    const archive = new Blob([buildPngPackage(state.style, outputs)], { type: 'application/zip' });
+    const objectUrl = URL.createObjectURL(archive);
+    const anchor = document.createElement('a');
+    anchor.href = objectUrl;
+    anchor.download = `aspectory-${state.style}-four-platforms.zip`;
+    anchor.click();
+    setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
+    setStatus(STRINGS[state.lang][shortened ? 'shortened' : 'packageSaved'], shortened);
+  } catch { setStatus(STRINGS[state.lang].failed, true); }
+  finally { button.disabled = false; }
+}
+
 for (const id of fields) document.getElementById(id).addEventListener('input', () => { paint(); save(); });
 for (const button of document.querySelectorAll('.platform')) button.addEventListener('click', () => select('platform', button.dataset.platform));
 for (const button of document.querySelectorAll('.style-option')) button.addEventListener('click', () => select('style', button.dataset.style));
 document.querySelector('#language').addEventListener('click', () => { state.lang = state.lang === 'en' ? 'zh' : 'en'; translate(); save(); });
 document.querySelector('#png').addEventListener('click', () => download('image/png'));
 document.querySelector('#jpeg').addEventListener('click', () => download('image/jpeg'));
+document.querySelector('#all').addEventListener('click', downloadAll);
 document.querySelector('#image').addEventListener('change', event => {
   const file = event.target.files?.[0];
   if (!file) return;
