@@ -25,6 +25,8 @@ Social Post Image Maker (Aspectory) is a free, local-first tool for turning a *r
 3. Choose a visual style and a destination. Add your own photo if you choose Photo story.
 4. Check the preview. Download one PNG/JPEG, or use **All 4 PNGs · ZIP** for every destination. Preview the result on each platform before publishing.
 
+Made an image with it? [Tell me which platform and style you tried](https://github.com/LydiaTools/aspectory/issues/new?template=use-feedback.yml), especially if text clipped or an export did not fit. The feedback form is bilingual and requires a GitHub sign-in; you can describe the problem without sharing private draft content.
+
 ```bash
 git clone https://github.com/LydiaTools/aspectory.git
 cd aspectory

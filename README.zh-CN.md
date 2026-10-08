@@ -22,6 +22,8 @@
 
 在线打开 [出海配图工坊中文版](https://lydiatools.github.io/aspectory/?lang=zh)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。发布前请在目标平台再次查看实际裁切效果。
 
+用过之后，欢迎通过[中英文反馈表](https://github.com/LydiaTools/aspectory/issues/new?template=use-feedback.yml)说说你做的是哪个平台、用了什么版式，以及哪里不好用。提交需要登录 GitHub；无需公开自己的私有文案。
+
 ```bash
 git clone https://github.com/LydiaTools/aspectory.git
 cd aspectory

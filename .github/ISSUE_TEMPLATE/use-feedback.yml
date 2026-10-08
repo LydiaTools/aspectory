@@ -1,0 +1,44 @@
+name: "Use feedback / 使用反馈"
+description: "Share a real layout problem or a workflow request / 反馈真实的排版问题或使用需求"
+title: "[Feedback] "
+body:
+  - type: dropdown
+    id: destination
+    attributes:
+      label: "Destination / 发布平台"
+      options:
+        - Pinterest
+        - Instagram
+        - Lemon8
+        - Facebook
+        - "General workflow / 通用流程"
+    validations:
+      required: true
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: "What needs attention? / 反馈类型"
+      options:
+        - "Text or layout / 文字或排版"
+        - "Download or export / 下载或导出"
+        - "Missing workflow / 缺少的流程"
+        - "Other / 其他"
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: "What did you try, and what happened? / 你做了什么，实际发生了什么？"
+      description: "Include the chosen style and the expected result. / 请写明版式和预期结果。"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: "Browser and device / 浏览器与设备"
+      placeholder: "e.g. Chrome on Android / 例如安卓 Chrome"
+  - type: textarea
+    id: example
+    attributes:
+      label: "Optional example or screenshot / 可选示例或截图"
+      description: "Please remove private draft text, personal data and keys before sharing. / 分享前请移除私密文案、个人信息和密钥。"
