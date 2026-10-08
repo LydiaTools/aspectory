@@ -21,7 +21,7 @@ const STRINGS = {
     heading: 'One useful idea.<br><em>Four social-ready images.</em>',
     intro: 'Turn a fact, lesson, or product insight into a visual post. Choose a style, check each platform, and download the set.',
     alternateLanguage: '中文版：出海社媒配图助手 ↗', profileLink: 'Explore more LydiaTools tools on GitHub ↗',
-    exportFollowup: 'Need more tools for your next post?', profileAction: 'Explore LydiaTools on GitHub ↗', sourceAction: 'See how this tool works ↗',
+    exportFollowup: 'Need more tools for your next post?', profileAction: 'Explore LydiaTools on GitHub ↗', sourceAction: 'See how this tool works ↗', longformAction: 'Plan a longer article from this idea ↗',
     contentHeading: 'The message', brand: 'Brand / byline', eyebrow: 'Category', title: 'Headline',
     body: 'Supporting insight', figure: 'Key figure', figureLabel: 'Figure label', cta: 'Footer / next step',
     url: 'Source / website', artHeading: 'Art direction', field: 'Field notes',
@@ -45,7 +45,7 @@ const STRINGS = {
     heading: '给海外平台发图，<br><em>一次做好四种尺寸。</em>',
     intro: '输入自己的内容，选择风格，分别导出 Pinterest、Instagram、Lemon8、Facebook 配图。中文操作，英文文案可直接排版；发布前逐平台预览。',
     alternateLanguage: 'English: Social Post Image Maker ↗', profileLink: '到 LydiaTools GitHub 看更多开源工具 ↗',
-    exportFollowup: '还想为下一篇内容找工具？', profileAction: '到 LydiaTools GitHub 看更多开源工具 ↗', sourceAction: '查看这个工具的源码 ↗',
+    exportFollowup: '还想为下一篇内容找工具？', profileAction: '到 LydiaTools GitHub 看更多开源工具 ↗', sourceAction: '查看这个工具的源码 ↗', longformAction: '围绕这个主题规划海外长文 ↗',
     contentHeading: '内容', brand: '品牌／署名', eyebrow: '栏目分类', title: '标题',
     body: '补充说明', figure: '核心数字', figureLabel: '数字说明', cta: '底部引导语',
     url: '来源／网站', artHeading: '视觉风格', field: '田野笔记',
@@ -106,6 +106,7 @@ function translate() {
   const alternateLanguage = document.querySelector('#alternate-language');
   alternateLanguage.href = state.lang === 'en' ? './zh.html' : './';
   alternateLanguage.lang = state.lang === 'en' ? 'zh-CN' : 'en';
+  document.querySelector('#longform-link').href = state.lang === 'en' ? 'https://lydiatools.github.io/longform-atlas/' : 'https://lydiatools.github.io/longform-atlas/?lang=zh';
   alternateLanguage.classList.toggle('is-secondary', state.lang === 'zh');
   document.querySelector('#home-link').href = state.lang === 'en' ? './' : './zh.html';
   document.querySelector('#home-link').setAttribute('aria-label', STRINGS[state.lang].homeLabel);
