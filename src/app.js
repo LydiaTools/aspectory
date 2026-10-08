@@ -21,6 +21,7 @@ const STRINGS = {
     heading: 'One useful idea.<br><em>Four social-ready images.</em>',
     intro: 'Turn a fact, lesson, or product insight into a visual post. Choose a style, check each platform, and download the set.',
     alternateLanguage: '中文版：出海社媒配图助手 ↗', profileLink: 'Explore more LydiaTools tools on GitHub ↗',
+    exportFollowup: 'Need more tools for your next post?', profileAction: 'Explore LydiaTools on GitHub ↗', sourceAction: 'See how this tool works ↗',
     contentHeading: 'The message', brand: 'Brand / byline', eyebrow: 'Category', title: 'Headline',
     body: 'Supporting insight', figure: 'Key figure', figureLabel: 'Figure label', cta: 'Footer / next step',
     url: 'Source / website', artHeading: 'Art direction', field: 'Field notes',
@@ -44,6 +45,7 @@ const STRINGS = {
     heading: '给海外平台发图，<br><em>一次做好四种尺寸。</em>',
     intro: '输入自己的内容，选择风格，分别导出 Pinterest、Instagram、Lemon8、Facebook 配图。中文操作，英文文案可直接排版；发布前逐平台预览。',
     alternateLanguage: 'English: Social Post Image Maker ↗', profileLink: '到 LydiaTools GitHub 看更多开源工具 ↗',
+    exportFollowup: '还想为下一篇内容找工具？', profileAction: '到 LydiaTools GitHub 看更多开源工具 ↗', sourceAction: '查看这个工具的源码 ↗',
     contentHeading: '内容', brand: '品牌／署名', eyebrow: '栏目分类', title: '标题',
     body: '补充说明', figure: '核心数字', figureLabel: '数字说明', cta: '底部引导语',
     url: '来源／网站', artHeading: '视觉风格', field: '田野笔记',
@@ -65,6 +67,7 @@ const STRINGS = {
 const fields = ['brand', 'eyebrow', 'title', 'body', 'figure', 'figureLabel', 'cta', 'url'];
 const canvas = document.querySelector('#preview');
 const status = document.querySelector('#status');
+const exportFollowup = document.querySelector('#export-followup');
 const state = { platform: 'pinterest', style: 'field', image: null, lang: 'en' };
 const saved = (() => { try { return JSON.parse(localStorage.getItem('aspectory-draft') || '{}'); } catch { return {}; } })();
 for (const id of fields) if (typeof saved[id] === 'string') document.getElementById(id).value = saved[id];
@@ -86,6 +89,7 @@ function save() {
 function setStatus(message = '', isError = false) {
   status.textContent = message;
   status.style.color = isError ? '#a4472b' : '#2a6550';
+  exportFollowup.hidden = true;
 }
 function translate() {
   document.documentElement.lang = state.lang === 'zh' ? 'zh-CN' : 'en';
@@ -121,6 +125,7 @@ function select(kind, value) {
 }
 let frame = 0;
 function paint() {
+  exportFollowup.hidden = true;
   cancelAnimationFrame(frame);
   frame = requestAnimationFrame(() => {
     const spec = PLATFORMS[state.platform];
@@ -143,7 +148,10 @@ async function download(mime) {
     anchor.download = `social-post-image-maker-${state.platform}-${state.style}.${mime === 'image/png' ? 'png' : 'jpg'}`;
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
-    if (!result.warnings.length) setStatus(STRINGS[state.lang].saved);
+    if (!result.warnings.length) {
+      setStatus(STRINGS[state.lang].saved);
+      exportFollowup.hidden = false;
+    }
   } catch { setStatus(STRINGS[state.lang].failed, true); }
 }
 
@@ -170,6 +178,7 @@ async function downloadAll() {
     anchor.click();
     setTimeout(() => URL.revokeObjectURL(objectUrl), 30_000);
     setStatus(STRINGS[state.lang][shortened ? 'shortened' : 'packageSaved'], shortened);
+    if (!shortened) exportFollowup.hidden = false;
   } catch { setStatus(STRINGS[state.lang].failed, true); }
   finally { button.disabled = false; }
 }
