@@ -20,7 +20,7 @@ const STRINGS = {
     local: 'Made on your device. No account.', overline: 'Images for the feeds where you post',
     heading: 'One useful idea.<br><em>Four social-ready images.</em>',
     intro: 'Turn a fact, lesson, or product insight into a visual post. Choose a style, check each platform, and download the set.',
-    profileLink: 'Explore more LydiaTools tools on GitHub ↗',
+    alternateLanguage: '中文版：出海社媒配图助手 ↗', profileLink: 'Explore more LydiaTools tools on GitHub ↗',
     contentHeading: 'The message', brand: 'Brand / byline', eyebrow: 'Category', title: 'Headline',
     body: 'Supporting insight', figure: 'Key figure', figureLabel: 'Figure label', cta: 'Footer / next step',
     url: 'Source / website', artHeading: 'Art direction', field: 'Field notes',
@@ -43,7 +43,7 @@ const STRINGS = {
     local: '本机制作，无需账号', overline: 'Pinterest · Instagram · Lemon8 · Facebook',
     heading: '给海外平台发图，<br><em>一次做好四种尺寸。</em>',
     intro: '输入自己的内容，选择风格，分别导出 Pinterest、Instagram、Lemon8、Facebook 配图。中文操作，英文文案可直接排版；发布前逐平台预览。',
-    profileLink: '到 LydiaTools GitHub 看更多开源工具 ↗',
+    alternateLanguage: 'English: Social Post Image Maker ↗', profileLink: '到 LydiaTools GitHub 看更多开源工具 ↗',
     contentHeading: '内容', brand: '品牌／署名', eyebrow: '栏目分类', title: '标题',
     body: '补充说明', figure: '核心数字', figureLabel: '数字说明', cta: '底部引导语',
     url: '来源／网站', artHeading: '视觉风格', field: '田野笔记',
@@ -97,6 +97,11 @@ function translate() {
   }
   document.querySelector('#language').textContent = state.lang === 'en' ? '中文' : 'English';
   document.querySelector('#language').setAttribute('aria-label', state.lang === 'en' ? '切换到中文' : 'Switch to English');
+  const alternateLanguage = document.querySelector('#alternate-language');
+  alternateLanguage.href = state.lang === 'en' ? './zh.html' : './';
+  alternateLanguage.lang = state.lang === 'en' ? 'zh-CN' : 'en';
+  alternateLanguage.classList.toggle('is-secondary', state.lang === 'zh');
+  document.querySelector('#home-link').href = state.lang === 'en' ? './' : './zh.html';
   document.querySelector('#home-link').setAttribute('aria-label', STRINGS[state.lang].homeLabel);
   document.querySelector('.style-grid').setAttribute('aria-label', STRINGS[state.lang].styleGroup);
   document.querySelector('.platforms').setAttribute('aria-label', STRINGS[state.lang].targetGroup);

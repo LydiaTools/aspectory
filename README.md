@@ -1,12 +1,14 @@
 # Social Post Image Maker
 
+**中文用户：**[打开「出海社媒配图助手」](https://lydiatools.github.io/aspectory/zh.html)，用中文操作，为 Pinterest、Instagram、Lemon8 和 Facebook 分别制作配图。[中文说明](README.zh-CN.md)
+
 **One useful idea. Four platform-ready image layouts.**
 
 Social Post Image Maker is a free, local-first tool for turning a *real fact, lesson, comparison, or product insight* into an image worth saving. Write once, choose a visual direction, and export a newly composed image for Pinterest, Instagram, Lemon8, or Facebook. It is an image composer, not an auto-posting bot or a promise of reach.
 
 The repository keeps its original `aspectory` URL so previously shared studio links continue to work; the public product name describes what the tool does.
 
-**[Try the live studio](https://lydiatools.github.io/aspectory/)** · **[中文版：出海社媒配图助手](https://lydiatools.github.io/aspectory/zh.html)** · [中文说明](README.zh-CN.md)
+**[Try the live studio](https://lydiatools.github.io/aspectory/)** · **[中文版](https://lydiatools.github.io/aspectory/zh.html)**
 
 <img src="docs/screenshots/pinterest-field-notes.png" alt="Field notes output: a sample mulch calculation in a 1000 by 1500 Pinterest image" width="230"> <img src="docs/screenshots/instagram-bright-poster.png" alt="Bright poster output for Instagram" width="230"> <img src="docs/screenshots/lemon8-no-photo.png" alt="Photo story output for Lemon8: the sample's key figure replaces an optional photo" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="Data sheet output for Facebook" width="230">
 

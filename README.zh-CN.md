@@ -1,8 +1,8 @@
-# 出海社媒配图助手
+# 出海社媒配图助手（Social Post Image Maker）
 
 **一份内容，分别做好 Pinterest、Instagram、Lemon8、Facebook 的配图。**
 
-出海社媒配图助手（英文名 Social Post Image Maker）面向想在海外平台发图的中文创作者。输入标题、事实说明、关键数字和来源，选择版式，然后分别导出 Pinterest、Instagram、Lemon8、Facebook 的图片。它会重新排版，不是把同一张图粗暴裁切。仓库地址沿用早期代号 `aspectory`，避免已分享的体验链接失效。
+面向要在海外平台发图的中文创作者：用中文操作，填写自己的中文或英文内容，然后分别导出适合 Pinterest、Instagram、Lemon8、Facebook 的图片。每个平台重新排版，不把同一张图裁成四份。产品英文名是 Social Post Image Maker；仓库地址沿用早期代号 `aspectory`，避免已分享的体验链接失效。
 
 **[打开中文版](https://lydiatools.github.io/aspectory/zh.html)** · [English README](README.md)
 
