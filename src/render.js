@@ -24,14 +24,17 @@ function font(size, family = 'sans', weight = 400) {
 }
 
 export function wrapLines(ctx, text, maxWidth) {
-  const tokens = String(text || '').match(/[\u3400-\u9fff]|[^\s\u3400-\u9fff]+|\s+/g) || [];
+  const tokens = String(text || '').match(/[\u3400-\u9fff]|[，。！？；：、（）【】《》]|[^\s\u3400-\u9fff，。！？；：、（）【】《》]+|\s+/g) || [];
   const lines = [];
   let line = '';
   let spaced = false;
   for (const word of tokens) {
     if (/^\s+$/.test(word)) { spaced = true; continue; }
     const next = line + (line && spaced ? ' ' : '') + word;
-    if (line && ctx.measureText(next).width > maxWidth) { lines.push(line); line = word; }
+    if (line && ctx.measureText(next).width > maxWidth) {
+      if (/^[，。！？；：、）】》]/.test(word)) line = next;
+      else { lines.push(line); line = word; }
+    }
     else line = next;
     spaced = false;
   }
@@ -166,7 +169,7 @@ function data(ctx, c, H, warnings) {
 function poster(ctx, c, H, warnings) {
   const compact = H < 1200, square = H <= 1050;
   ctx.fillStyle = '#213ac2'; ctx.fillRect(0, 0, 1000, H);
-  ctx.fillStyle = '#f3bb7a'; ctx.beginPath(); ctx.arc(836, 162, 210, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = '#f3bb7a'; ctx.beginPath(); ctx.arc(880, 90, 170, 0, Math.PI * 2); ctx.fill();
   ctx.fillStyle = '#ef7657'; ctx.fillRect(0, H - 230, 1000, 230);
   textBlock(ctx, c.brand, { x: 68, y: 68, width: 700, size: 29, maxLines: 1, weight: 700, color: '#fff2dd' }, warnings);
   textBlock(ctx, c.eyebrow.toUpperCase(), { x: 68, y: 167, width: 780, size: 24, maxLines: 1, weight: 700, color: '#f3bb7a' }, warnings);

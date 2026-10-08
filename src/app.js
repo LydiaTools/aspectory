@@ -11,12 +11,15 @@ import '@fontsource/space-grotesk/latin-700.css';
 import './styles.css';
 import { PLATFORMS, STYLE_NAMES, renderPost } from './render.js';
 import { buildPngPackage } from './export-package.js';
+import { EXAMPLES, initialLanguage, translatedExample } from './i18n.js';
 
 const STRINGS = {
   en: {
-    local: 'Made on your device. No account.', overline: 'A studio for useful images',
-    heading: 'One idea.<br><em>Four native canvases.</em>',
-    intro: 'Turn a real insight into a visual post. Change the platform or art direction without rewriting your story.',
+    productName: 'Social Post Image Maker', pageTitle: 'Social Post Image Maker — Aspectory',
+    homeLabel: 'Social Post Image Maker home', styleGroup: 'Visual style', targetGroup: 'Export target', previewRegion: 'Live preview', canvasLabel: 'Generated post preview',
+    local: 'Made on your device. No account.', overline: 'Images for the feeds where you post',
+    heading: 'One useful idea.<br><em>Four social-ready images.</em>',
+    intro: 'Turn a fact, lesson, or product insight into a visual post. Choose a style, check each platform, and download the set.',
     contentHeading: 'The message', brand: 'Brand / byline', eyebrow: 'Category', title: 'Headline',
     body: 'Supporting insight', figure: 'Key figure', figureLabel: 'Figure label', cta: 'Footer / next step',
     url: 'Source / website', artHeading: 'Art direction', field: 'Field notes',
@@ -33,9 +36,11 @@ const STRINGS = {
     failed: 'Export failed. Try another browser.', shortened: 'Some text was shortened in the image. Edit the copy or choose a taller canvas.'
   },
   zh: {
-    local: '本机制作，无需账号', overline: '做真正有用的图片',
-    heading: '一个想法，<br><em>四种平台版式。</em>',
-    intro: '把真实见解做成图片。换平台、换风格时会重新排版，不只是裁切。',
+    productName: '出海配图工坊', pageTitle: '出海配图工坊 — Aspectory',
+    homeLabel: '出海配图工坊首页', styleGroup: '视觉风格', targetGroup: '导出平台', previewRegion: '实时预览', canvasLabel: '生成的帖子图片预览',
+    local: '本机制作，无需账号', overline: 'Pinterest · Instagram · Lemon8 · Facebook',
+    heading: '一份内容，<br><em>四个平台都有好图。</em>',
+    intro: '把真实观点、经验或产品信息做成海外社媒图片。选择风格，逐平台检查，一次打包下载。',
     contentHeading: '内容', brand: '品牌／署名', eyebrow: '栏目分类', title: '标题',
     body: '补充说明', figure: '核心数字', figureLabel: '数字说明', cta: '底部引导语',
     url: '来源／网站', artHeading: '视觉风格', field: '田野笔记',
@@ -61,7 +66,12 @@ const saved = (() => { try { return JSON.parse(localStorage.getItem('aspectory-d
 for (const id of fields) if (typeof saved[id] === 'string') document.getElementById(id).value = saved[id];
 if (saved.platform && PLATFORMS[saved.platform]) state.platform = saved.platform;
 if (saved.style && STYLE_NAMES[saved.style]) state.style = saved.style;
-if (saved.lang === 'zh') state.lang = 'zh';
+state.lang = initialLanguage(new URLSearchParams(location.search).get('lang'), saved.lang, navigator.language);
+for (const from of ['en', 'zh']) {
+  const current = Object.fromEntries(fields.map(id => [id, document.getElementById(id).value]));
+  const example = translatedExample(current, from, state.lang);
+  if (example) { for (const id of fields) document.getElementById(id).value = example[id]; break; }
+}
 
 function content() { return Object.fromEntries(fields.map(id => [id, document.getElementById(id).value])); }
 function save() {
@@ -74,6 +84,7 @@ function setStatus(message = '', isError = false) {
 }
 function translate() {
   document.documentElement.lang = state.lang === 'zh' ? 'zh-CN' : 'en';
+  document.title = STRINGS[state.lang].pageTitle;
   for (const node of document.querySelectorAll('[data-i18n]')) {
     const value = STRINGS[state.lang][node.dataset.i18n];
     if (node.dataset.i18n === 'heading') node.innerHTML = value;
@@ -81,6 +92,11 @@ function translate() {
   }
   document.querySelector('#language').textContent = state.lang === 'en' ? '中文' : 'English';
   document.querySelector('#language').setAttribute('aria-label', state.lang === 'en' ? '切换到中文' : 'Switch to English');
+  document.querySelector('#home-link').setAttribute('aria-label', STRINGS[state.lang].homeLabel);
+  document.querySelector('.style-grid').setAttribute('aria-label', STRINGS[state.lang].styleGroup);
+  document.querySelector('.platforms').setAttribute('aria-label', STRINGS[state.lang].targetGroup);
+  document.querySelector('.preview-column').setAttribute('aria-label', STRINGS[state.lang].previewRegion);
+  canvas.setAttribute('aria-label', STRINGS[state.lang].canvasLabel);
   paint();
 }
 function select(kind, value) {
@@ -151,7 +167,16 @@ async function downloadAll() {
 for (const id of fields) document.getElementById(id).addEventListener('input', () => { paint(); save(); });
 for (const button of document.querySelectorAll('.platform')) button.addEventListener('click', () => select('platform', button.dataset.platform));
 for (const button of document.querySelectorAll('.style-option')) button.addEventListener('click', () => select('style', button.dataset.style));
-document.querySelector('#language').addEventListener('click', () => { state.lang = state.lang === 'en' ? 'zh' : 'en'; translate(); save(); });
+document.querySelector('#language').addEventListener('click', () => {
+  const previous = state.lang;
+  state.lang = previous === 'en' ? 'zh' : 'en';
+  const example = translatedExample(content(), previous, state.lang);
+  if (example) for (const id of fields) document.getElementById(id).value = example[id];
+  const url = new URL(location.href);
+  url.searchParams.set('lang', state.lang);
+  history.replaceState(null, '', url);
+  translate(); save();
+});
 document.querySelector('#png').addEventListener('click', () => download('image/png'));
 document.querySelector('#jpeg').addEventListener('click', () => download('image/jpeg'));
 document.querySelector('#all').addEventListener('click', downloadAll);

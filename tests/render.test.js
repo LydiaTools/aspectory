@@ -21,6 +21,7 @@ test('continuous Chinese copy can wrap without inserted spaces', () => {
   const ctx = { measureText: value => ({ width: value.length * 10 }) };
   assert.deepEqual(wrapLines(ctx, '花园需要多少袋覆盖物', 40), ['花园需要', '多少袋覆', '盖物']);
   assert.deepEqual(wrapLines(ctx, '10×10 英尺的花坛需要多少袋', 80), ['10×10 英尺', '的花坛需要多少袋']);
+  assert.ok(wrapLines(ctx, '花坛长宽各10英尺，12.5袋要向上取整。', 90).every(line => !/^[，。！？；：、]/.test(line)));
 });
 
 test('content normalization caps input and preserves factual characters', () => {

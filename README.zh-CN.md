@@ -1,12 +1,12 @@
-# Aspectory
+# 出海配图工坊
 
-**把一个真实、有用的观点，做成适合四个平台的图片。**
+**Aspectory · 一份内容，分别做好 Pinterest、Instagram、Lemon8、Facebook 的配图。**
 
-Aspectory 是本机运行的社媒图片制作工具。输入标题、事实说明、关键数字和来源，选择版式，然后分别导出 Pinterest、Instagram、Lemon8、Facebook 的图片。它会重新排版，不是把同一张图粗暴裁切。
+出海配图工坊（英文名 Social Post Image Maker，仓库名 Aspectory）是本机运行的社媒图片制作工具。输入标题、事实说明、关键数字和来源，选择版式，然后分别导出 Pinterest、Instagram、Lemon8、Facebook 的图片。它会重新排版，不是把同一张图粗暴裁切。
 
-**[直接体验](https://lydiatools.github.io/aspectory/)** · [English README](README.md)
+**[打开中文版](https://lydiatools.github.io/aspectory/?lang=zh)** · [English README](README.md)
 
-<img src="docs/screenshots/pinterest-field-notes.png" alt="Aspectory 田野笔记风格 Pinterest 成品" width="230"> <img src="docs/screenshots/instagram-bright-poster.png" alt="Aspectory Instagram 醒目海报成品" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="Aspectory Lemon8 照片叙事成品，使用园艺概念图" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="Aspectory Facebook 数据手册成品" width="230">
+<img src="docs/screenshots/pinterest-field-notes-zh.png" alt="中文版田野笔记：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/pinterest-bright-poster-zh.png" alt="中文版醒目海报：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/lemon8-photo-story.png" alt="照片叙事风格 Lemon8 成品，使用园艺概念图" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="数据手册风格 Facebook 成品" width="230">
 
 ## 功能
 
@@ -15,11 +15,12 @@ Aspectory 是本机运行的社媒图片制作工具。输入标题、事实说�
 - 实时预览，单张下载 PNG/JPEG，或把四个平台分别排版的 PNG 一次打包下载为 ZIP。
 - 可上传自己的照片；不上传到服务器。没有照片时使用明显是图形的背景。
 - 中英文界面；切换界面语言不会覆盖正在编辑的文案。
+- 中文浏览器首次打开默认中文界面和中文示例；分享 `?lang=zh` 链接可直接打开中文版。切换语言只转换未修改的示例，不会翻译或覆盖你自己写的内容。
 - 无需账号、API Key 或后端；草稿只保存在当前浏览器的本地存储。
 
 ## 上手
 
-在线打开 [Aspectory](https://lydiatools.github.io/aspectory/)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。发布前请在目标平台再次查看实际裁切效果。
+在线打开 [出海配图工坊中文版](https://lydiatools.github.io/aspectory/?lang=zh)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。发布前请在目标平台再次查看实际裁切效果。
 
 ```bash
 git clone https://github.com/LydiaTools/aspectory.git

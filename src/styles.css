@@ -2,3 +2,6 @@
 .export-all { width: 100%; min-height: 44px; margin-top: 9px; border: 1px solid #235a46; border-radius: 3px; background: transparent; color: #235a46; font-size: 14px; font-weight: 700; }
 .export-all:hover { background: #e0e9df; }
 .export-all:disabled { cursor: progress; opacity: .55; }
+.brand-name { font-size: clamp(16px, 1.8vw, 24px); letter-spacing: -.045em; white-space: nowrap; }
+@media (max-width: 460px) { .brand-name { font-size: 16px; } }
+@media (max-width: 460px) { html[lang="zh-CN"] .intro h1 { font-size: 36px; } }
