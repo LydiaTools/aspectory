@@ -10,6 +10,8 @@ The repository keeps its original `aspectory` URL so previously shared studio li
 
 **[Try the live studio](https://lydiatools.github.io/aspectory/)** · **[中文版](https://lydiatools.github.io/aspectory/zh.html)**
 
+Listed in the [Social Media Hacker List · Multi-platform tools](https://github.com/MobileFirstLLC/social-media-hacker-list#multi-platform).
+
 <img src="docs/screenshots/pinterest-field-notes.png" alt="Field notes output: a sample mulch calculation in a 1000 by 1500 Pinterest image" width="230"> <img src="docs/screenshots/instagram-bright-poster.png" alt="Bright poster output for Instagram" width="230"> <img src="docs/screenshots/lemon8-no-photo.png" alt="Photo story output for Lemon8: the sample's key figure replaces an optional photo" width="230"> <img src="docs/screenshots/facebook-data-sheet.png" alt="Data sheet output for Facebook" width="230">
 
 ## What it does

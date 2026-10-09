@@ -6,6 +6,8 @@
 
 **[打开中文版](https://lydiatools.github.io/aspectory/zh.html)** · [English README](README.md)
 
+已收录于 [Social Media Hacker List · 多平台工具清单](https://github.com/MobileFirstLLC/social-media-hacker-list#multi-platform)。
+
 <img src="docs/screenshots/pinterest-field-notes-zh.png" alt="中文版田野笔记：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/pinterest-bright-poster-zh.png" alt="中文版醒目海报：覆盖物购买数量的 Pinterest 配图" width="230"> <img src="docs/screenshots/lemon8-no-photo-zh.png" alt="中文版 Lemon8 照片叙事：未上传照片时突出真实输入的关键数字" width="230"> <img src="public/social-preview-zh.png" alt="本工具实际导出的中文版 Facebook 数据手册风格配图" width="230">
 
 ## 功能
