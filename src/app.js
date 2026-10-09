@@ -9,6 +9,7 @@ import '@fontsource/space-grotesk/latin-500.css';
 import '@fontsource/space-grotesk/latin-600.css';
 import '@fontsource/space-grotesk/latin-700.css';
 import './styles.css';
+import './analytics-consent.js';
 import { PLATFORMS, STYLE_NAMES, renderPost } from './render.js';
 import { buildPngPackage } from './export-package.js';
 import { EXAMPLES, initialLanguage, languageFromPath, translatedExample } from './i18n.js';
@@ -31,7 +32,7 @@ const STRINGS = {
     uploadHelp: 'Optional. Used by Photo story; stays in this browser.', destination: 'Destination',
     formatNote: "Canvas sizes are export presets, not promises of reach. Check each platform's preview before posting.",
     live: 'Live canvas', downloadPng: 'Download PNG', downloadJpeg: 'JPEG', downloadAll: 'All 4 PNGs · ZIP',
-    privacy: 'No uploads, no tracking, no automatic posting. Your image and text remain in the browser.',
+    privacy: 'No uploads or automatic posting. Your image and text stay in this browser. Optional Google Analytics runs only after consent.',
     sourceLink: 'Source on GitHub', feedbackLink: 'Share feedback',
     addTitle: 'Add a headline before exporting.', uploaded: 'Photo ready', tooLarge: 'Choose an image under 10 MB.',
     badImage: 'Could not read this image. Try PNG, JPEG or WebP.', saved: 'Image downloaded.',
@@ -55,7 +56,7 @@ const STRINGS = {
     uploadHelp: '可选，仅照片叙事使用；图片留在浏览器里。', destination: '发布平台',
     formatNote: '这些是导出尺寸预设，不保证流量。发布前请在平台预览。',
     live: '实时画布', downloadPng: '下载 PNG', downloadJpeg: 'JPEG', downloadAll: '四平台 PNG 打包下载',
-    privacy: '不上传、不跟踪、不自动发布。文字与照片保留在本机浏览器中。',
+    privacy: '不自动发布；文字与照片留在浏览器。本托管演示页仅在你同意后启用 Google Analytics 访问统计。',
     sourceLink: 'GitHub 源码', feedbackLink: '反馈使用体验',
     addTitle: '请先填写标题，再导出。', uploaded: '照片已载入', tooLarge: '请选择小于 10 MB 的图片。',
     badImage: '无法读取图片，请换用 PNG、JPEG 或 WebP。', saved: '图片已下载。',
@@ -106,7 +107,10 @@ function translate() {
   const alternateLanguage = document.querySelector('#alternate-language');
   alternateLanguage.href = state.lang === 'en' ? './zh.html' : './';
   alternateLanguage.lang = state.lang === 'en' ? 'zh-CN' : 'en';
-  document.querySelector('#longform-link').href = state.lang === 'en' ? 'https://lydiatools.github.io/longform-atlas/' : 'https://lydiatools.github.io/longform-atlas/?lang=zh';
+  const longformCampaign = 'utm_source=aspectory&utm_medium=referral&utm_campaign=lydiatools_cross_project&utm_content=export_followup';
+  document.querySelector('#longform-link').href = state.lang === 'en'
+    ? `https://lydiatools.github.io/longform-atlas/?${longformCampaign}`
+    : `https://lydiatools.github.io/longform-atlas/?lang=zh&${longformCampaign}`;
   alternateLanguage.classList.toggle('is-secondary', state.lang === 'zh');
   document.querySelector('#home-link').href = state.lang === 'en' ? './' : './zh.html';
   document.querySelector('#home-link').setAttribute('aria-label', STRINGS[state.lang].homeLabel);

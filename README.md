@@ -1,6 +1,6 @@
 # Social Post Image Maker
 
-**中文用户：**[打开「出海社媒配图助手」](https://lydiatools.github.io/aspectory/zh.html)，用中文操作，为 Pinterest、Instagram、Lemon8 和 Facebook 分别制作配图。[中文说明](README.zh-CN.md)
+**中文用户：**[打开「出海社媒配图助手」](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_zh)，用中文操作，为 Pinterest、Instagram、Lemon8 和 Facebook 分别制作配图。[中文说明](README.zh-CN.md)
 
 **One useful idea. Four platform-ready image layouts.**
 
@@ -8,7 +8,7 @@ Social Post Image Maker is a free, local-first tool for turning a *real fact, le
 
 The repository keeps its original `aspectory` URL so previously shared studio links continue to work; the public product name describes what the tool does.
 
-**[Try the live studio](https://lydiatools.github.io/aspectory/)** · **[中文版](https://lydiatools.github.io/aspectory/zh.html)**
+**[Try the live studio](https://lydiatools.github.io/aspectory/?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_en)** · **[中文版](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_zh)**
 
 Listed in the [Social Media Hacker List · Multi-platform tools](https://github.com/MobileFirstLLC/social-media-hacker-list#multi-platform).
 
@@ -21,13 +21,13 @@ Listed in the [Social Media Hacker List · Multi-platform tools](https://github.
 - **Real image files:** Live Canvas preview, individual PNG/JPEG exports, or one ZIP containing four separately rendered platform PNGs in the chosen style.
 - **Your own photo, if you want one:** Photo story can use a local PNG, JPEG, or WebP. Without a photo, the key figure becomes the lead visual on a clearly graphic background.
 - **English and Chinese interface:** Switch languages without deleting the copy you are writing. The canvas accepts English or Chinese text.
-- **A Chinese starting point:** Chinese browsers open with a Chinese interface and sample; the shareable [`zh.html` page](https://lydiatools.github.io/aspectory/zh.html) has a Chinese title and preview for Chinese-language posts. Language switching changes only the untouched sample and preserves your own draft.
+- **A Chinese starting point:** Chinese browsers open with a Chinese interface and sample; the shareable [`zh.html` page](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=language_link) has a Chinese title and preview for Chinese-language posts. Language switching changes only the untouched sample and preserves your own draft.
 - **Chinese controls for overseas posts:** Write English copy in the Chinese interface when that is the language your audience reads. The tool lays out the text you enter; it does not translate it.
-- **Local-first by design:** No account, backend, API key, upload, analytics script, or automatic publishing. Your draft is saved in this browser's local storage; the optional photo remains in memory for the current session. The Latin font files are bundled with the site.
+- **Local-first by design:** No account, backend, API key, or automatic publishing. Your draft is saved in this browser's local storage; the optional photo remains in memory for the current session. The hosted GitHub Pages demo offers optional Google Analytics only after consent; local builds do not load it. After consent, it records basic visit/referral metrics and clicks to LydiaTools GitHub pages, not editor fields or images.
 
 ## Try it
 
-1. Open the [live studio](https://lydiatools.github.io/aspectory/) or run it locally.
+1. Open the [live studio](https://lydiatools.github.io/aspectory/?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=quick_start) or run it locally.
 2. Replace the CoverCalc Pro example with your own **verified** headline, context, key figure, and source.
 3. Choose a visual style and a destination. Add your own photo if you choose Photo story.
 4. Check the preview. Download one PNG/JPEG, or use **All 4 PNGs · ZIP** for every destination. Preview the result on each platform before publishing.

@@ -4,7 +4,7 @@
 
 面向要在海外平台发图的中文创作者：用中文操作，填写自己的中文或英文内容，然后分别导出适合 Pinterest、Instagram、Lemon8、Facebook 的图片。每个平台重新排版，不把同一张图裁成四份。产品英文名是 Social Post Image Maker；仓库地址沿用早期代号 `aspectory`，避免已分享的体验链接失效。
 
-**[打开中文版](https://lydiatools.github.io/aspectory/zh.html)** · [English README](README.md)
+**[打开中文版](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme_zh&utm_content=top)** · [English README](README.md)
 
 已收录于 [Social Media Hacker List · 多平台工具清单](https://github.com/MobileFirstLLC/social-media-hacker-list#multi-platform)。
 
@@ -19,10 +19,11 @@
 - 中英文界面；切换界面语言不会覆盖正在编辑的文案。
 - 中文浏览器首次打开默认中文界面和中文示例；分享 [`zh.html`](https://lydiatools.github.io/aspectory/zh.html) 链接可让接收者直接看到中文标题、操作界面和中文分享卡片。中文界面可直接输入英文，制作面向海外读者的配图；工具不会自动翻译。切换语言只转换未修改的示例，不会翻译或覆盖你自己写的内容。
 - 无需账号、API Key 或后端；草稿只保存在当前浏览器的本地存储。
+- 在线 GitHub Pages 演示页只在你明确同意后加载 Google Analytics，用于基础访问、来源及前往 LydiaTools GitHub 页面的点击统计；自动增强测量（滚动和通用出站点击）已关闭。统计代码不发送编辑器文案或图片，本地构建不会加载 Google Analytics。
 
 ## 上手
 
-在线打开 [出海社媒配图助手中文版](https://lydiatools.github.io/aspectory/zh.html)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。如果面向英语读者，就在中文界面里填写英文内容。发布前请在目标平台再次查看实际裁切效果。
+在线打开 [出海社媒配图助手中文版](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme_zh&utm_content=quick_start)，把示例内容换成自己的真实资料，选择风格和平台，检查预览后下载单张图片，或点击「四平台 PNG 打包下载」。如果面向英语读者，就在中文界面里填写英文内容。发布前请在目标平台再次查看实际裁切效果。
 
 用过之后，欢迎通过[中英文反馈表](https://github.com/LydiaTools/aspectory/issues/new?template=use-feedback.yml)说说你做的是哪个平台、用了什么版式，以及哪里不好用。提交需要登录 GitHub；无需公开自己的私有文案。
 
