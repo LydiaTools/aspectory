@@ -4,7 +4,7 @@
 
 面向要在海外平台发图的中文创作者：用中文操作，填写自己的中文或英文内容，然后分别导出适合 Pinterest、Instagram、Lemon8、Facebook 的图片。每个平台重新排版，不把同一张图裁成四份。产品英文名是 Social Post Image Maker；仓库地址沿用早期代号 `aspectory`，避免已分享的体验链接失效。
 
-**[打开中文版](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme_zh&utm_content=top)** · [English README](README.md)
+**[打开中文版](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme_zh&utm_content=top)** · [下载当前 main 分支源代码 ZIP](https://github.com/LydiaTools/aspectory/archive/refs/heads/main.zip) · [English README](README.md)
 
 已收录于 [Social Media Hacker List · 多平台工具清单](https://github.com/MobileFirstLLC/social-media-hacker-list#multi-platform)。
 

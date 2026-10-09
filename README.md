@@ -8,7 +8,7 @@ Social Post Image Maker is a free, local-first tool for turning a *real fact, le
 
 The repository keeps its original `aspectory` URL so previously shared studio links continue to work; the public product name describes what the tool does.
 
-**[Try the live studio](https://lydiatools.github.io/aspectory/?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_en)** · **[中文版](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_zh)**
+**[Try the live studio](https://lydiatools.github.io/aspectory/?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_en)** · [Download the current source ZIP](https://github.com/LydiaTools/aspectory/archive/refs/heads/main.zip) · **[中文版](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_zh)**
 
 Listed in the [Social Media Hacker List · Multi-platform tools](https://github.com/MobileFirstLLC/social-media-hacker-list#multi-platform).
 
