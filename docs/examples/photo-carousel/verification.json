@@ -1,0 +1,125 @@
+{
+  "capturedAt": "2026-10-24T10:54:07.839Z",
+  "status": "passed",
+  "sourceCommit": "d73d0d2b98e7fdd75115f5767855cda69a05da2c",
+  "source": "Production dist preview on CI loopback; no signed-in browser or user photos.",
+  "browser": "151.0.7922.34",
+  "platform": "linux",
+  "settings": {
+    "frame": "4:5",
+    "background": "white",
+    "inset": "2%"
+  },
+  "outputs": [
+    {
+      "source": [
+        1280,
+        853
+      ],
+      "sourceSHA256": "2714dab2a862e3e3414f95e66fc40ca55d89146be54326f95e786f3188f3f5b6",
+      "file": "01-carousel-4x5.png",
+      "bytes": 1120349,
+      "sha256": "71393592c649045f273dacf595df308d3640ec15b0836567d791244ab14434b5",
+      "exported": [
+        1080,
+        1350
+      ],
+      "rectangle": [
+        22,
+        330,
+        1036,
+        690
+      ],
+      "meanRGBError": 0.00006994572211963516,
+      "outerPixel": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "source": [
+        1280,
+        1280
+      ],
+      "sourceSHA256": "26fccafd3e3e181605ee233883d71ed729f2ddb9fe9bd329375034ba2b6817ff",
+      "file": "02-carousel-4x5.png",
+      "bytes": 1935048,
+      "sha256": "3d4d99c953b110a817d905193dcda1ec63a0d0061ca5cce8972c9f8afc00ce23",
+      "exported": [
+        1080,
+        1350
+      ],
+      "rectangle": [
+        22,
+        157,
+        1036,
+        1036
+      ],
+      "meanRGBError": 0.00005683427498099313,
+      "outerPixel": [
+        255,
+        255,
+        255,
+        255
+      ]
+    },
+    {
+      "source": [
+        960,
+        1440
+      ],
+      "sourceSHA256": "3e765dba689cff119b4bd19737294682caf0b74b852b48ed8fc2360373d07e72",
+      "file": "03-carousel-4x5.png",
+      "bytes": 1096687,
+      "sha256": "f2a465dcb1428ee525d9e1316bdbc89b48525378fb6d99f1142f96ee887757f1",
+      "exported": [
+        1080,
+        1350
+      ],
+      "rectangle": [
+        105,
+        22,
+        870,
+        1306
+      ],
+      "meanRGBError": 0.000015548632013753206,
+      "outerPixel": [
+        255,
+        255,
+        255,
+        255
+      ]
+    }
+  ],
+  "files": {
+    "carousel-photos-en.jpg": {
+      "bytes": 131075,
+      "sha256": "a92d84c1fb76185ab9e1c6829ad89da90b1f2bda0acf274aadad7c3b733e4a85"
+    },
+    "carousel-photos-zh.jpg": {
+      "bytes": 129379,
+      "sha256": "f59512714c0437b4d9aaf43277f457af96a22966b6b802e02c00e568d24a3ddc"
+    },
+    "preview-1.jpg": {
+      "bytes": 32825,
+      "sha256": "5efb8d5526f1fa95afb66a8cbf6062fa1cb38192ceaf420c6e2fe2661ac49575"
+    },
+    "preview-2.jpg": {
+      "bytes": 53264,
+      "sha256": "e1f222d4c40f320e6b47c38b4470d07ceb8a25fed826978056e3ca433dd885a8"
+    },
+    "preview-3.jpg": {
+      "bytes": 36429,
+      "sha256": "3610bee682372b6595f6c2b604254c27472ea3493c846a07f03c2dc37ef7c646"
+    },
+    "carousel-photo-preview.jpg": {
+      "bytes": 110965,
+      "sha256": "18fb4dc389af4db1dfc290614a7d9d18f7ea821c1310376ff34b4b0bc615cb38"
+    }
+  },
+  "pageErrors": [],
+  "imageProcessingHTTPRequests": [],
+  "note": "Actual application exports and UI captures of credited CC0 inputs. Preview JPEGs and promotional montage are derived from those PNGs. Not outside adoption, platform posting or campaign results."
+}

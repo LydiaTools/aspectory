@@ -35,3 +35,25 @@ SHA-256:
 - `docs/examples/carousel/02-square.png`: `12ae4be02d438b4f6a408fa893486b0809e6fa18e802f2da512a008277e1eaf2`
 - `docs/examples/carousel/03-portrait.png`: `71afb1d07fb406fa2699c1d64de73bf6a2cedc94265698f431dad304c598d60f`
 - `public/carousel-preview.png`: `59215e103e442d6bc3c58ec028a3907aff78e236532e7f8f8a339fbac842488a`
+
+
+## CC0 photograph example — 2026-10-24
+
+`carousel-photos-en.jpg` and `carousel-photos-zh.jpg` are actual 1440×1040 UI captures from the production `dist` preview in an isolated Chromium 151.0.7922.34 browser on Linux. They were produced by [Actions run 40087690801](https://github.com/LydiaTools/aspectory/actions/runs/40087690801), source `d73d0d2b98e7fdd75115f5767855cda69a05da2c`, at 2026-10-24T10:54:07.839Z. No pointer overlays were added. The Chinese capture follows an actual language switch with all three photos retained. These are built-source captures, not a signed-in browser or platform-posting test.
+
+The inputs are three individually credited CC0 display-size Wikimedia Commons photo derivatives, by freestocks.org, Cecelia Alexander and Tyler C. See [source pages, dimensions and input hashes](../../public/examples/carousel-photos/CREDITS.md). They were imported without local cropping or retouching. The source photos may have been framed/cropped by their photographers. The app output preserves the complete downloaded input through resampling, not the original camera pixels.
+
+`../examples/photo-carousel/01-carousel-4x5.png` is the exact 1080×1350 landscape-photo PNG from the real UI download. The three 520×650 `preview-*.jpg` files are JPEG previews of actual PNG exports, not another app export format. `../../public/carousel-photo-preview.jpg` is a 1200×630 promotional montage rendered from `../carousel-photo-card.html`, using those preview JPEGs. Its text identifies actual tool output and credits the CC0 photographers. It is not customer work, a campaign or an endorsement.
+
+The exact [CI report](../examples/photo-carousel/verification.json) records the source commit, output dimensions/hashes, full-foreground comparison, white border and no processing HTTP requests with analytics consent declined. Public CC0 inputs were the only photo files used. A local visual review checked the English/Chinese controls, all three full-photo compositions, readable headline and no pointer overlay. [Reproduce it](../photo-demo.md). Fixed v0.2.0 Release assets remain unchanged.
+
+SHA-256:
+
+- `docs/screenshots/carousel-photos-en.jpg`: `a92d84c1fb76185ab9e1c6829ad89da90b1f2bda0acf274aadad7c3b733e4a85`
+- `docs/screenshots/carousel-photos-zh.jpg`: `f59512714c0437b4d9aaf43277f457af96a22966b6b802e02c00e568d24a3ddc`
+- `docs/examples/photo-carousel/preview-1.jpg`: `5efb8d5526f1fa95afb66a8cbf6062fa1cb38192ceaf420c6e2fe2661ac49575`
+- `docs/examples/photo-carousel/preview-2.jpg`: `e1f222d4c40f320e6b47c38b4470d07ceb8a25fed826978056e3ca433dd885a8`
+- `docs/examples/photo-carousel/preview-3.jpg`: `3610bee682372b6595f6c2b604254c27472ea3493c846a07f03c2dc37ef7c646`
+- `docs/examples/photo-carousel/01-carousel-4x5.png`: `71393592c649045f273dacf595df308d3640ec15b0836567d791244ab14434b5`
+- `public/carousel-photo-preview.jpg`: `18fb4dc389af4db1dfc290614a7d9d18f7ea821c1310376ff34b4b0bc615cb38`
+- `docs/examples/photo-carousel/verification.json`: `83017e9aa51eeffcb56e1dfca0f3f0094084efbd4ef8061e378b367195453d4b`

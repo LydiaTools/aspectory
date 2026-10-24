@@ -107,7 +107,7 @@ try {
     const previewBytes = await preview.locator('img').screenshot({ path: join(output, `preview-${index + 1}.jpg`), type: 'jpeg', quality: 92 });
     previews.push(previewBytes);
     await preview.close();
-    results.push({ source: sources[index].file, sourceSHA256: sources[index].sha256,
+    results.push({ sourceFile: sources[index].file, sourceSHA256: sources[index].sha256,
       file: name, bytes: bytes.length, sha256: sha256(bytes), ...compared });
   }
   assert.deepEqual(errors, []);
