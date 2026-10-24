@@ -6,7 +6,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: fileURLToPath(new URL('./index.html', import.meta.url)),
-        zh: fileURLToPath(new URL('./zh.html', import.meta.url))
+        zh: fileURLToPath(new URL('./zh.html', import.meta.url)),
+        carousel: fileURLToPath(new URL('./carousel.html', import.meta.url))
       }
     }
   }

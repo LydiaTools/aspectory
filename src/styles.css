@@ -18,3 +18,5 @@
 .export-followup[hidden] { display: none; }
 .export-followup p { margin: 0 0 8px; font-size: 14px; font-weight: 700; }
 .export-followup a { display: inline-block; margin: 0 20px 4px 0; color: #235a46; font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+
+.tool-nav{display:flex;gap:25px;align-items:center;padding:20px 0 0;font-size:14px}.tool-nav a{color:#586960;text-decoration:none}.tool-nav [aria-current]{font-weight:700;color:#235a46;border-bottom:2px solid #235a46;padding-bottom:8px}

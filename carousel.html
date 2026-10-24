@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#eae7df" />
+    <meta name="description" content="Fit a mixed set of landscape, square and portrait photos into one carousel frame. Keep the full image, reorder and download an ordered PNG ZIP. Free, local, English and Chinese." />
+    <link rel="canonical" href="https://lydiatools.github.io/aspectory/carousel.html" />
+    <meta property="og:title" content="Keep every photo whole | Aspectory Carousel Fit" />
+    <meta property="og:description" content="Mixed photos. One shared frame. Fit the whole image, reorder, and download a PNG ZIP. All image processing stays on your device." />
+    <meta property="og:image" content="https://lydiatools.github.io/aspectory/carousel-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Carousel Fit | Social Post Image Maker</title>
+  </head>
+  <body>
+    <div id="app" class="carousel-app">
+      <header class="topbar">
+        <a id="home-link" class="brand" href="./"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span data-copy="product">Social Post Image Maker</span></a>
+        <button id="language" class="language" type="button">中文</button>
+      </header>
+      <nav class="tool-nav" aria-label="Tools"><a id="composer-link" href="./" data-copy="composer">Create a graphic</a><span aria-current="page" data-copy="carousel">Fit a photo carousel</span></nav>
+      <main>
+        <h1 data-copy="heading">Fit a photo carousel</h1>
+        <div class="carousel-workspace">
+          <section class="carousel-controls" aria-label="Photo and frame settings">
+            <label class="photo-picker" for="photos"><strong data-copy="add">Add photos</strong><span data-copy="formats">PNG, JPEG, WebP · up to 20</span><input id="photos" type="file" accept="image/png,image/jpeg,image/webp" multiple /></label>
+            <p class="tab-note" data-copy="local">Photos stay in this tab until you close it.</p>
+            <fieldset id="frame-settings">
+              <legend data-copy="frame">Frame</legend>
+              <div class="ratio-options">
+                <label><input type="radio" name="frame" value="portrait" checked /><span>4:5<small>1080 × 1350</small></span></label>
+                <label><input type="radio" name="frame" value="square" /><span>1:1<small>1080 × 1080</small></span></label>
+                <label><input type="radio" name="frame" value="tall" /><span>3:4<small>1080 × 1440</small></span></label>
+              </div>
+              <label class="control-label" for="background" data-copy="background">Background</label>
+              <select id="background"><option value="white" data-copy="white">White</option><option value="black" data-copy="black">Black</option><option value="blur" data-copy="blur">Blurred photo</option></select>
+              <label class="inset-label" for="inset"><span data-copy="inset">Border</span><output id="inset-value" for="inset">2%</output></label>
+              <input id="inset" type="range" min="0" max="12" step="1" value="2" />
+            </fieldset>
+            <button id="download-zip" class="export-primary" type="button" disabled data-copy="download">Download PNG ZIP</button>
+            <p id="status" role="status" aria-live="polite"></p>
+            <ul id="file-errors" class="file-errors" aria-live="polite" hidden></ul>
+          </section>
+          <section class="photo-workspace" aria-label="Photo order and previews">
+            <div class="sheet-heading"><h2 id="count" data-copy="emptyCount">Your photos</h2><button id="clear" class="quiet-button" type="button" hidden data-copy="clear">Clear all</button></div>
+            <div id="drop-zone" class="drop-zone">
+              <span class="drop-shapes" aria-hidden="true"><i></i><i></i><i></i></span>
+              <p data-copy="drop">Drop photos here</p>
+              <button id="samples" class="quiet-button" type="button" data-copy="samples">Try a sample set</button>
+            </div>
+            <ol id="photo-list" class="photo-list" aria-label="Slide order"></ol>
+          </section>
+        </div>
+      </main>
+      <footer class="footer"><a id="footer-composer" href="./" data-copy="composer">Create a graphic</a><div class="footer-links"><a href="https://github.com/LydiaTools/aspectory" target="_blank" rel="noopener noreferrer" data-copy="source">GitHub source</a><a href="https://github.com/LydiaTools/aspectory/releases/latest" target="_blank" rel="noopener noreferrer" data-copy="offline">Use offline</a><a href="https://github.com/LydiaTools/aspectory/issues/new?template=use-feedback.yml" target="_blank" rel="noopener noreferrer" data-copy="feedback">Feedback</a></div></footer>
+    </div>
+    <script type="module" src="/src/carousel.js"></script>
+  </body>
+</html>
