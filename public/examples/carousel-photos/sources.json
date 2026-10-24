@@ -1,0 +1,41 @@
+[
+  {
+    "file": "01-wide-poppy.jpg",
+    "title": "File:Poppy flower closeup (29492859127).jpg",
+    "author": "freestocks.org from Olsztyn, Poland",
+    "source": "https://commons.wikimedia.org/wiki/File:Poppy_flower_closeup_(29492859127).jpg",
+    "license": "CC0",
+    "dimensions": [
+      1280,
+      853
+    ],
+    "bytes": 117139,
+    "sha256": "2714dab2a862e3e3414f95e66fc40ca55d89146be54326f95e786f3188f3f5b6"
+  },
+  {
+    "file": "02-square-flowers.jpg",
+    "title": "File:Penstemon breviculus - aspidoscelis (1).jpg",
+    "author": "Cecelia Alexander",
+    "source": "https://commons.wikimedia.org/wiki/File:Penstemon_breviculus_-_aspidoscelis_(1).jpg",
+    "license": "CC0",
+    "dimensions": [
+      1280,
+      1280
+    ],
+    "bytes": 265474,
+    "sha256": "26fccafd3e3e181605ee233883d71ed729f2ddb9fe9bd329375034ba2b6817ff"
+  },
+  {
+    "file": "03-tall-lavender.jpg",
+    "title": "File:Lavender Flower Closeup 2.jpg",
+    "author": "Tyler C.",
+    "source": "https://commons.wikimedia.org/wiki/File:Lavender_Flower_Closeup_2.jpg",
+    "license": "CC0",
+    "dimensions": [
+      960,
+      1440
+    ],
+    "bytes": 101403,
+    "sha256": "3e765dba689cff119b4bd19737294682caf0b74b852b48ed8fc2360373d07e72"
+  }
+]

@@ -29,12 +29,12 @@
 ### 批量保留整图
 
 1. 打开[中文版图片工作台](https://lydiatools.github.io/aspectory/carousel.html?lang=zh)，或下载并双击 [`carousel-offline.html`](https://github.com/LydiaTools/aspectory/releases/download/v0.2.0/carousel-offline.html)。
-2. 添加图片，或点击「试用示例图片」。选择统一画幅、背景和留白。
+2. 添加自己的图片，或[下载三张 CC0 练习照片](https://lydiatools.github.io/aspectory/examples/carousel-photo-sources.zip)并解压。这组横图、方图与竖图可用「4:5」「白色」「2%」试用；「试用示例图片」提供四角带编号的测试插画。
 3. 用箭头调整顺序，点击「下载 PNG 压缩包」。文件按当前顺序编号。
 
 <img src="docs/screenshots/carousel-zh.png" alt="实际中文工作台：横图、方图和竖图放入相同竖版画幅，源图四角的编号均完整保留" width="840">
 
-示例为工具本身生成的三张原创测试插画，四角编号用于核对是否完整。截图来自实际界面与渲染，不是摄影作品或运营效果证明。[来源记录](docs/screenshots/PROVENANCE.md)
+上图仍使用工具生成的三张原创测试插画，四角编号用于核对是否完整。另备的下载练习包包含 freestocks.org、Cecelia Alexander 和 Tyler C. 的三张 CC0 摄影作品；见[照片来源与试用步骤](public/examples/carousel-photos/CREDITS.md)。[截图来源记录](docs/screenshots/PROVENANCE.md)
 
 支持 PNG、JPEG、WebP，单张不超过 15 MB／4800 万像素，最多 20 张。处理时先将长边缩至最多 2048 像素，再完整缩放到所选的 1080 像素宽画幅；这是重新采样后的配图，不是原像素无损复制。透明区域叠加到所选背景。图片只在当前标签页内存中，关闭即清除。暂不支持视频、HEIC 和动态导出。统一画幅是发布前准备，发布时仍需核对平台自己的预览。
 
