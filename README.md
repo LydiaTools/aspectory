@@ -1,7 +1,5 @@
 # Social Post Image Maker
 
-**中文用户：**[打开「出海社媒配图助手」](https://lydiatools.github.io/aspectory/zh.html?utm_source=github&utm_medium=referral&utm_campaign=aspectory_readme&utm_content=intro_zh)，用中文操作，为 Pinterest、Instagram、Lemon8 和 Facebook 分别制作配图。[中文说明](README.zh-CN.md)
-
 **One useful idea. Four platform-ready image layouts.**
 
 Social Post Image Maker is a free, local-first tool for turning a *real fact, lesson, comparison, or product insight* into an image worth saving. Write once, choose a visual direction, and export a newly composed image for Pinterest, Instagram, Lemon8, or Facebook. It is an image composer, not an auto-posting bot or a promise of reach.
