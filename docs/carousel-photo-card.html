@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Carousel Fit — real photo exports</title>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 1200px; height: 630px; }
+    body { padding: 38px 44px 30px; background: #eae7df; color: #203d33; font-family: Arial, sans-serif; }
+    header { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 24px; border-bottom: 1px solid #c9cfc3; }
+    .brand { font-size: 17px; font-weight: 700; }
+    .mode { color: #53665b; font-size: 14px; }
+    main { display: grid; grid-template-columns: 322px 1fr; gap: 34px; align-items: center; padding-top: 32px; }
+    h1 { font-size: 57px; line-height: 1.03; letter-spacing: -2.7px; margin: 0 0 23px; }
+    .description { font-size: 21px; line-height: 1.5; margin: 0; color: #53665b; }
+    .features { font-size: 16px; font-weight: 700; line-height: 1.6; margin: 24px 0 0; color: #235a46; }
+    .sheet { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    figure { margin: 0; }
+    figure img { display: block; width: 100%; aspect-ratio: 4 / 5; border: 1px solid #c9cfc3; }
+    figcaption { margin-top: 13px; font-size: 14px; color: #53665b; }
+    .frame { margin: 0 0 18px; font-size: 16px; font-weight: 700; }
+    .note { margin: 18px 0 0; font-size: 14px; color: #53665b; }
+    footer { display: flex; justify-content: space-between; align-items: end; margin-top: 34px; }
+    .url { margin: 0; font-size: 17px; font-weight: 700; color: #235a46; }
+    .credits { margin: 0; color: #68726c; font-size: 11px; line-height: 1.6; text-align: right; }
+  </style>
+</head>
+<body>
+  <header><span class="brand">Social Post Image Maker</span><span class="mode">Carousel Fit</span></header>
+  <main>
+    <section>
+      <h1>Keep every<br>photo whole.</h1>
+      <p class="description">Mixed shapes. One frame.<br>Reorder. Download the ZIP.</p>
+      <p class="features">Free · Local · No account<br>English / 中文</p>
+    </section>
+    <section>
+      <p class="frame">Three real photos → the same 4:5 frame</p>
+      <div class="sheet">
+        <figure><img src="examples/photo-carousel/preview-1.jpg" alt="Actual PNG export of the full landscape red poppy photo with white padding"><figcaption>01 — Landscape input</figcaption></figure>
+        <figure><img src="examples/photo-carousel/preview-2.jpg" alt="Actual PNG export of the full square purple wildflower photo with white padding"><figcaption>02 — Square input</figcaption></figure>
+        <figure><img src="examples/photo-carousel/preview-3.jpg" alt="Actual PNG export of the full portrait lavender photo with white padding"><figcaption>03 — Portrait input</figcaption></figure>
+      </div>
+      <p class="note">Actual tool exports · full image fitted inside each frame</p>
+    </section>
+  </main>
+  <footer>
+    <p class="url">github.com/LydiaTools/aspectory</p>
+    <p class="credits">CC0 photos: freestocks.org · Cecelia Alexander · Tyler C.<br>Download the practice photos from the README.</p>
+  </footer>
+</body>
+</html>

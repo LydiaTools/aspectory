@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "vite build --base=./ && node scripts/build-carousel-offline.mjs",
-    "test": "node --test"
+    "test": "node --test",
+    "verify:photos": "node scripts/verify-carousel-photos.mjs"
   },
   "devDependencies": {
     "esbuild": "0.28.2",
+    "playwright": "1.62.1",
     "vite": "^7.1.0"
   },
   "dependencies": {
